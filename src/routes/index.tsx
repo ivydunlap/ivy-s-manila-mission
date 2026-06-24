@@ -102,7 +102,7 @@ function HomePage() {
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 md:flex-row">
           <div className="w-full md:w-1/2">
             <img
-              src={kimChildren}
+              src={kimChildren.url}
               alt="Children served through Kids International Ministries"
               loading="lazy"
               width={1280}
