@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import ivyPortrait from "@/assets/ivy-portrait.jpg";
+import heroManila from "@/assets/hero-manila.jpg";
 import kimChildren from "@/assets/kim-children.jpg";
 
 export const Route = createFileRoute("/")({
@@ -26,59 +26,52 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   return (
     <SiteShell>
-      {/* Hero */}
-      <section className="px-6 py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-12 lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            <span className="font-display mb-6 inline-block text-xs italic tracking-wide text-clay">
-              Manila, Philippines
-            </span>
-            <h1 className="font-display text-balance mb-8 text-5xl font-medium leading-[1.05] md:text-6xl lg:text-7xl">
-              Walking with the children of Manila.
-            </h1>
-            <p className="text-pretty mb-10 max-w-[48ch] text-lg leading-relaxed text-ink/70">
-              I'm joining Kids International Ministries to serve at-risk youth
-              and families in the Philippines through communication, hosting,
-              and shared life on the ground.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              <Link
-                to="/story"
-                className="flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-black/5 transition-colors hover:bg-paper/60"
-              >
-                My Story
-              </Link>
-              <Link
-                to="/partnership"
-                className="flex items-center gap-2 rounded-full bg-sage px-5 py-2.5 text-sm font-medium text-base ring-1 ring-sage transition-colors hover:bg-sage/90"
-              >
-                Partner With Me
-              </Link>
-              <Link
-                to="/newsletter"
-                className="flex items-center gap-2 rounded-full bg-paper px-5 py-2.5 text-sm font-medium text-ink ring-1 ring-black/5 transition-colors hover:bg-paper/60"
-              >
-                Newsletter
-              </Link>
-            </div>
-          </div>
-          <div className="relative lg:col-span-5">
-            <img
-              src={ivyPortrait}
-              alt="Ivy Dunlap"
-              width={1024}
-              height={1280}
-              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-sm ring-1 ring-black/5"
-            />
-            <div className="absolute -bottom-6 -left-6 max-w-[220px] rounded-2xl bg-base p-4 shadow-sm ring-1 ring-black/5">
-              <p className="font-display text-sm italic leading-snug text-sage">
-                "I never expected to be a missionary, but God had other plans
-                for my heart in Manila."
-              </p>
-            </div>
+      {/* Hero — full-bleed photographic */}
+      <section className="relative isolate -mt-px overflow-hidden">
+        <img
+          src={heroManila}
+          alt="A child smiling at golden hour on a street in Manila"
+          width={1920}
+          height={1280}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        {/* Warm tonal overlays — dusty blue base + orange glow */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.22 0.04 245 / 0.55) 0%, oklch(0.22 0.04 245 / 0.35) 45%, oklch(0.28 0.06 40 / 0.55) 100%)",
+          }}
+        />
+        <div className="relative mx-auto flex min-h-[78vh] max-w-5xl flex-col items-center justify-center px-6 py-28 text-center md:min-h-[86vh] md:py-40">
+          <span className="font-display mb-6 inline-block text-xs italic tracking-[0.25em] text-white/85 uppercase">
+            Manila, Philippines
+          </span>
+          <h1 className="font-display text-balance mb-8 max-w-[18ch] text-5xl font-medium leading-[1.05] text-white md:text-7xl lg:text-[5.25rem]">
+            Walking with the children of Manila.
+          </h1>
+          <p className="text-pretty mx-auto mb-10 max-w-[52ch] text-lg leading-relaxed text-white/85">
+            I'm joining Kids International Ministries to serve at-risk youth
+            and families in the Philippines — through communication, hosting,
+            and shared life on the ground.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            <Link
+              to="/partnership"
+              className="inline-flex items-center gap-2 rounded-full bg-clay px-6 py-3 text-sm font-medium text-white shadow-sm transition-colors hover:bg-clay/90"
+            >
+              Partner With Me
+            </Link>
+            <Link
+              to="/story"
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-6 py-3 text-sm font-medium text-white ring-1 ring-white/40 backdrop-blur-sm transition-colors hover:bg-white/20"
+            >
+              My Story
+            </Link>
           </div>
         </div>
       </section>
+
 
       {/* Calling */}
       <section className="bg-paper py-20 md:py-28">
