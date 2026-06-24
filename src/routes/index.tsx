@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
-import heroManila from "@/assets/hero-manila.jpg";
+import heroAsset from "@/assets/ivy-hero.jpeg.asset.json";
 import kimChildren from "@/assets/kim-children.jpg";
 
 export const Route = createFileRoute("/")({
@@ -29,11 +29,11 @@ function HomePage() {
       {/* Hero — full-bleed photographic */}
       <section className="relative isolate -mt-px overflow-hidden">
         <img
-          src={heroManila}
-          alt="A child smiling at golden hour on a street in Manila"
-          width={1920}
-          height={1280}
-          className="absolute inset-0 h-full w-full object-cover"
+          src={heroAsset.url}
+          alt="Ivy walking down a Manila path arm-in-arm with three young girls"
+          width={1366}
+          height={1822}
+          className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
         />
         {/* Warm tonal overlays — dusty blue base + orange glow */}
         <div
