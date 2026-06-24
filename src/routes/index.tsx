@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import heroAsset from "@/assets/ivy-hero.jpeg.asset.json";
-import kimChildren from "@/assets/kim-children.jpg";
+import kimChildren from "@/assets/kim-children.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -102,7 +102,7 @@ function HomePage() {
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 md:flex-row">
           <div className="w-full md:w-1/2">
             <img
-              src={kimChildren}
+              src={kimChildren.url}
               alt="Children served through Kids International Ministries"
               loading="lazy"
               width={1280}
