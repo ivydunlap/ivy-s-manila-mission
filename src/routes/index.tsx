@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import heroAsset from "@/assets/ivy-hero.jpeg.asset.json";
-import kimChildren from "@/assets/kim-children.jpg";
+import kimChildren from "@/assets/kim-children.jpeg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
