@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { SiteShell, PageHeader } from "@/components/site-shell";
+import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
 import { Mail, Instagram, Facebook, HandHeart } from "lucide-react";
 import ivyPortrait from "@/assets/ivy-portrait.jpg";
 
@@ -31,78 +31,90 @@ function ContactPage() {
         intro="Questions, encouragement, an invitation to share at your church — I'd love to hear from you."
       />
 
-      <section className="px-6 pb-24">
-        <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-[1fr_1.4fr]">
-          {/* Left: photo + contact lines */}
-          <div className="space-y-8">
-            <img
-              src={ivyPortrait}
-              alt="Ivy Dunlap"
-              loading="lazy"
-              width={1024}
-              height={1280}
-              className="aspect-[4/5] w-full rounded-3xl object-cover shadow-sm ring-1 ring-black/5"
-            />
-            <div className="space-y-4">
-              <ContactLine
-                icon={<Mail className="size-4" strokeWidth={1.75} />}
-                label="Email"
-                href="mailto:hello@ivydunlap.com"
-                value="hello@ivydunlap.com"
+      <section className="px-6 py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl gap-16 md:grid-cols-[1fr_1.3fr]">
+          {/* Photo + contact lines */}
+          <div className="space-y-10">
+            <div className="relative">
+              <div className="absolute -inset-3 -z-10 bg-clay/15 md:-inset-4" />
+              <img
+                src={ivyPortrait}
+                alt="Ivy Dunlap"
+                loading="lazy"
+                width={1024}
+                height={1280}
+                className="aspect-[4/5] w-full object-cover shadow-lg"
               />
-              <ContactLine
-                icon={<Instagram className="size-4" strokeWidth={1.75} />}
-                label="Instagram"
-                href="https://instagram.com"
-                value="@ivy.dunlap"
-              />
-              <ContactLine
-                icon={<Facebook className="size-4" strokeWidth={1.75} />}
-                label="Facebook"
-                href="https://facebook.com"
-                value="Ivy Dunlap"
-              />
-              <ContactLine
-                icon={<HandHeart className="size-4" strokeWidth={1.75} />}
-                label="Give"
-                href="https://kidsim.org/give"
-                value="kidsim.org/give"
-              />
+            </div>
+            <div>
+              <Eyebrow>Find Me Here</Eyebrow>
+              <ul className="divide-y divide-ink/10 border-y border-ink/10">
+                <ContactLine
+                  icon={<Mail className="size-4" strokeWidth={1.75} />}
+                  label="Email"
+                  href="mailto:hello@ivydunlap.com"
+                  value="hello@ivydunlap.com"
+                />
+                <ContactLine
+                  icon={<Instagram className="size-4" strokeWidth={1.75} />}
+                  label="Instagram"
+                  href="https://instagram.com"
+                  value="@ivy.dunlap"
+                />
+                <ContactLine
+                  icon={<Facebook className="size-4" strokeWidth={1.75} />}
+                  label="Facebook"
+                  href="https://facebook.com"
+                  value="Ivy Dunlap"
+                />
+                <ContactLine
+                  icon={<HandHeart className="size-4" strokeWidth={1.75} />}
+                  label="Give"
+                  href="https://kidsim.org/give"
+                  value="kidsim.org/give"
+                />
+              </ul>
             </div>
           </div>
 
-          {/* Right: form */}
+          {/* Form */}
           <form
             onSubmit={(e) => e.preventDefault()}
-            className="space-y-5 rounded-3xl bg-paper p-8 ring-1 ring-black/5 md:p-10"
+            className="border border-ink/10 bg-paper/60 p-8 md:p-12"
           >
-            <Field label="Your name">
-              <input
-                type="text"
-                required
-                className="w-full rounded-2xl bg-base px-4 py-3 text-sm ring-1 ring-black/10 focus:outline-none focus:ring-2 focus:ring-sage"
-              />
-            </Field>
-            <Field label="Email">
-              <input
-                type="email"
-                required
-                className="w-full rounded-2xl bg-base px-4 py-3 text-sm ring-1 ring-black/10 focus:outline-none focus:ring-2 focus:ring-sage"
-              />
-            </Field>
-            <Field label="Message">
-              <textarea
-                rows={5}
-                required
-                className="w-full resize-none rounded-2xl bg-base px-4 py-3 text-sm ring-1 ring-black/10 focus:outline-none focus:ring-2 focus:ring-sage"
-              />
-            </Field>
-            <button
-              type="submit"
-              className="rounded-full bg-sage px-6 py-3 text-sm font-medium text-base ring-1 ring-sage hover:bg-sage/90"
-            >
-              Send Message
-            </button>
+            <Eyebrow>Send a Note</Eyebrow>
+            <h2 className="font-display mb-8 text-3xl font-medium leading-tight md:text-4xl">
+              Drop me <span className="italic">a line.</span>
+            </h2>
+            <div className="space-y-6">
+              <Field label="Your name">
+                <input
+                  type="text"
+                  required
+                  className="w-full border-b border-ink/20 bg-transparent py-3 text-base focus:border-clay focus:outline-none"
+                />
+              </Field>
+              <Field label="Email">
+                <input
+                  type="email"
+                  required
+                  className="w-full border-b border-ink/20 bg-transparent py-3 text-base focus:border-clay focus:outline-none"
+                />
+              </Field>
+              <Field label="Message">
+                <textarea
+                  rows={5}
+                  required
+                  className="w-full resize-none border-b border-ink/20 bg-transparent py-3 text-base focus:border-clay focus:outline-none"
+                />
+              </Field>
+              <button
+                type="submit"
+                className="mt-4 inline-flex rounded-full bg-clay px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
+              >
+                Send Message
+              </button>
+            </div>
           </form>
         </div>
       </section>
@@ -119,7 +131,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.2em] text-ink/60">
+      <span className="mb-2 block text-[10px] font-bold uppercase tracking-[0.25em] text-ink/55">
         {label}
       </span>
       {children}
@@ -139,23 +151,26 @@ function ContactLine({
   value: string;
 }) {
   return (
-    <a
-      href={href}
-      className="flex items-center gap-4 rounded-2xl bg-paper p-4 ring-1 ring-black/5 transition-colors hover:bg-paper/60"
-      target={href.startsWith("http") ? "_blank" : undefined}
-      rel="noreferrer"
-    >
-      <span className="grid size-10 shrink-0 place-items-center rounded-xl bg-base text-sage ring-1 ring-black/5">
-        {icon}
-      </span>
-      <span className="min-w-0">
-        <span className="block text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40">
-          {label}
+    <li>
+      <a
+        href={href}
+        className="group flex items-center gap-5 py-5 transition-colors hover:text-clay"
+        target={href.startsWith("http") ? "_blank" : undefined}
+        rel="noreferrer"
+      >
+        <span className="text-ink/40 transition-colors group-hover:text-clay">
+          {icon}
         </span>
-        <span className="block truncate text-sm font-medium text-ink">
-          {value}
+        <span className="flex-1 min-w-0">
+          <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-ink/45">
+            {label}
+          </span>
+          <span className="block truncate text-base font-medium">{value}</span>
         </span>
-      </span>
-    </a>
+        <span className="text-ink/30 transition-transform group-hover:translate-x-1 group-hover:text-clay">
+          →
+        </span>
+      </a>
+    </li>
   );
 }
