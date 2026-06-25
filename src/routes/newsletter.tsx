@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { SiteShell, PageHeader } from "@/components/site-shell";
+import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
 
 export const Route = createFileRoute("/newsletter")({
   head: () => ({
@@ -56,15 +56,20 @@ function NewsletterPage() {
         intro="Monthly stories, prayer requests, and updates from Manila. The best way to follow along."
       />
 
-      {/* Subscribe */}
-      <section className="px-6">
-        <div className="mx-auto max-w-2xl rounded-3xl bg-paper p-8 ring-1 ring-black/5">
-          <h2 className="font-display mb-2 text-2xl font-medium">
-            Get updates by email
-          </h2>
-          <p className="mb-6 text-sm leading-relaxed text-ink/65">
-            One thoughtful email a month. No spam, just the real stuff.
-          </p>
+      {/* Subscribe — editorial bar */}
+      <section className="border-b border-ink/10 bg-paper/60 px-6 py-16 md:py-20">
+        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[1fr_1.2fr] md:items-end md:gap-16">
+          <div>
+            <Eyebrow>Subscribe</Eyebrow>
+            <h2 className="font-display text-3xl font-medium leading-tight md:text-4xl">
+              One thoughtful email{" "}
+              <span className="italic text-clay/90">a month.</span>
+            </h2>
+            <p className="mt-4 text-sm leading-relaxed text-ink/65">
+              No spam, just the real stuff — stories, prayer requests, and
+              what God is doing.
+            </p>
+          </div>
           <form
             className="flex flex-col gap-3 sm:flex-row"
             onSubmit={(e) => e.preventDefault()}
@@ -73,11 +78,11 @@ function NewsletterPage() {
               type="email"
               required
               placeholder="you@email.com"
-              className="flex-1 rounded-full bg-base px-5 py-3 text-sm ring-1 ring-black/10 placeholder:text-ink/40 focus:outline-none focus:ring-2 focus:ring-sage"
+              className="flex-1 border-b border-ink/25 bg-transparent px-1 py-3 text-base placeholder:text-ink/40 focus:border-clay focus:outline-none"
             />
             <button
               type="submit"
-              className="rounded-full bg-sage px-6 py-3 text-sm font-medium text-base ring-1 ring-sage hover:bg-sage/90"
+              className="rounded-full bg-clay px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
             >
               Subscribe
             </button>
@@ -85,31 +90,38 @@ function NewsletterPage() {
         </div>
       </section>
 
-      {/* Archive */}
-      <section className="px-6 py-24">
+      {/* Archive — editorial list */}
+      <section className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-3xl">
-          <div className="mb-10 flex items-end justify-between">
-            <h2 className="font-display text-3xl font-medium">Archive</h2>
-            <span className="text-xs uppercase tracking-widest text-ink/40">
+          <div className="mb-12 flex items-end justify-between border-b border-ink/15 pb-6">
+            <div>
+              <Eyebrow>Archive</Eyebrow>
+              <h2 className="font-display text-3xl font-medium md:text-4xl">
+                Past <span className="italic">letters.</span>
+              </h2>
+            </div>
+            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/45">
               {posts.length} posts
             </span>
           </div>
-          <div className="divide-y divide-border/60">
+          <div className="divide-y divide-ink/10">
             {posts.map((p) => (
-              <article key={p.title} className="group py-8">
-                <div className="mb-2 text-xs uppercase tracking-widest text-clay">
+              <article key={p.title} className="group grid grid-cols-1 gap-2 py-10 md:grid-cols-[8rem_1fr] md:gap-8">
+                <div className="font-display text-sm italic text-clay">
                   {p.date}
                 </div>
-                <h3 className="font-display mb-3 text-2xl font-medium leading-snug transition-colors group-hover:text-sage">
-                  <Link to="/newsletter">{p.title}</Link>
-                </h3>
-                <p className="leading-relaxed text-ink/70">{p.excerpt}</p>
-                <Link
-                  to="/newsletter"
-                  className="mt-4 inline-block text-sm font-semibold text-ink underline-offset-4 hover:underline"
-                >
-                  Read more →
-                </Link>
+                <div>
+                  <h3 className="font-display mb-3 text-2xl font-medium leading-snug transition-colors group-hover:text-clay md:text-3xl">
+                    <Link to="/newsletter">{p.title}</Link>
+                  </h3>
+                  <p className="leading-relaxed text-ink/70">{p.excerpt}</p>
+                  <Link
+                    to="/newsletter"
+                    className="font-display mt-5 inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic transition-colors hover:border-clay"
+                  >
+                    Read more →
+                  </Link>
+                </div>
               </article>
             ))}
           </div>
