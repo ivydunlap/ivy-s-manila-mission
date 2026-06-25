@@ -51,10 +51,11 @@ function HomePage() {
             Walking with the children of Manila.
           </h1>
           <p className="text-pretty mx-auto mb-10 max-w-[52ch] text-lg leading-relaxed text-white/85">
-            I'm joining Kids International Ministries to serve at-risk youth
-            and families in the Philippines — through communication, hosting,
-            and shared life on the ground.
+            I'm moving to Manila to serve full-time with Kids International
+            Ministries — loving the children and families God placed on my
+            heart, and sharing the hope of Jesus alongside them.
           </p>
+
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
               to="/partnership"
@@ -80,14 +81,18 @@ function HomePage() {
             The Calling
           </span>
           <h2 className="font-display text-balance mb-8 text-3xl font-medium leading-tight md:text-5xl">
-            A heart changed in a place I never planned to go.
+            God has a way of calling us into stories we never would have
+            written for ourselves.
           </h2>
           <p className="text-pretty mx-auto max-w-[56ch] text-lg leading-relaxed text-ink/75">
-            After my first short-term trip to the Philippines, I couldn't
-            forget the faces of the children I met in the communities of
-            Antipolo and Manila. What started as a summer became a clear
-            conviction: this is where I am meant to be.
+            Two years ago, my family tagged a missions trip onto the end of a
+            vacation. I arrived exhausted and unsure — and I left forever
+            changed. In the midst of real poverty, I found a joy and a faith
+            deeper than anything I had ever seen. My heart broke for the
+            people of the Philippines, and it gave me a feeling I could never
+            shake.
           </p>
+
           <Link
             to="/story"
             className="font-display mt-10 inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic transition-colors hover:border-clay"
@@ -122,11 +127,13 @@ function HomePage() {
             Kids International Ministries
           </h2>
           <p className="text-pretty mx-auto mb-8 max-w-[56ch] leading-relaxed text-white/85">
-            KIM has been serving the Philippines since 1993, focusing on
-            meeting both physical and spiritual needs. From children's homes
-            and schools to medical clinics and feeding programs, they offer
-            a holistic witness to the love of Christ.
+            KIM has been serving the Philippines for over thirty years —
+            children's homes, schools, medical clinics, feeding programs, and
+            family ministry. I'll be serving as an intern to Director Norman
+            Denler, helping teams who come to serve and walking alongside the
+            kids and families who have already captured my heart.
           </p>
+
           <Link
             to="/mission"
             className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
