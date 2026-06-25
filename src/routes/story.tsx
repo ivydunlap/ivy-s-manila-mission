@@ -10,12 +10,13 @@ export const Route = createFileRoute("/story")({
       {
         name: "description",
         content:
-          "How God moved Ivy Dunlap from never expecting missions to a full-time call to serve in Manila.",
+          "How a tagged-on missions trip to Manila became a clear call to long-term ministry with Kids International Ministries.",
       },
       { property: "og:title", content: "My Story — Ivy Dunlap" },
       {
         property: "og:description",
-        content: "From never expecting missions to a full-time call in Manila.",
+        content:
+          "From an exhausted first trip to a clear long-term call — Ivy's full story, in her own voice.",
       },
     ],
   }),
@@ -27,8 +28,8 @@ function StoryPage() {
     <SiteShell>
       <PageHeader
         eyebrow="My Story"
-        title="I never expected to be a missionary."
-        intro="And yet here I am, packing my life into suitcases for Manila. This is the long version of how God rearranged my plans."
+        title="Where do I even start."
+        intro="Honestly, I can't fully put into words what this means to me. It would be so much easier if you could just get on a plane and experience it yourself. But I'll try."
       />
 
       <section className="px-6">
@@ -45,42 +46,128 @@ function StoryPage() {
       </section>
 
       <article className="mx-auto max-w-2xl space-y-6 px-6 py-16 text-lg leading-relaxed text-ink/80">
+        <h2 className="font-display pt-2 text-3xl font-medium text-ink">
+          How We Found KIM
+        </h2>
         <p>
-          Growing up, I had a clear picture of my life. College, a steady
-          career, a small house close to family. The word "missionary" felt
-          like something other people did — people braver than me, more sure
-          of themselves, more spiritual.
+          Two years ago, my family planned a vacation trip through Southeast
+          Asia. At the end of it, my parents decided to tag on a missions
+          trip. My mom literally googled mission organizations in Southeast
+          Asia and started looking through options. A lot of them had
+          restrictions — kids can come but only if they're a certain age, or
+          they can only do certain things. Then she found Kids International
+          Ministries. What stood out to her immediately was that they said:{" "}
+          <em>we love families. Bring your kids, any ages.</em>
+        </p>
+        <p>It really could have only been the Lord, the way we got connected.</p>
+
+        <h2 className="font-display pt-8 text-3xl font-medium text-ink">
+          The First Trip
+        </h2>
+        <p>
+          I had never been on a missions trip before. By the time we arrived
+          in Manila, I was exhausted. In my mind, the missions portion of the
+          trip felt like just something I had to do. I knew it would be hard
+          and uncomfortable, and honestly? It was not the part of the trip I
+          was looking forward to.
+        </p>
+        <p>I could not have anticipated what God was about to do.</p>
+        <p>
+          I arrived tired, a little empty, and ready to get it over with. What
+          I found was something I was completely unprepared for. I met people
+          living in poverty — real poverty, nothing like the world I had
+          always known — and they had more joy and love to give than almost
+          anyone I had ever met. Their faith wasn't theoretical. It was steady
+          and real and alive in a way that made my own feel brand new.
         </p>
         <p>
-          Then a friend invited me on a short-term trip to the Philippines. I
-          said yes mostly because I didn't want to say no. I expected ten
-          warm, exhausting days and then a quiet flight home.
-        </p>
-        <p>
-          What I didn't expect was the way the children in Manila would
-          undo me. I didn't expect to feel so at home in a place so far from
-          home. I didn't expect God to use a small concrete classroom in
-          Antipolo to make my plans feel suddenly, gently, completely wrong.
-        </p>
-        <p>
-          I came back to the U.S. and tried to shake it. I worked, I prayed, I
-          waited for the feeling to pass. It didn't pass. It deepened. Verses
-          I'd read for years started reading me back: "Whom shall I send, and
-          who will go for us?" And finally, quietly, "Here I am. Send me."
+          I left filled. Changed. My heart on fire for God. And devastated to
+          say goodbye. My whole family felt it. We knew we had to go back.
         </p>
 
-        <h2 className="font-display pt-8 text-3xl font-medium">Why I'm Going</h2>
+        <h2 className="font-display pt-8 text-3xl font-medium text-ink">
+          The Second Trip — and the Call
+        </h2>
         <p>
-          I'm going because the children of Manila are worth knowing by name.
-          I'm going because Kids International Ministries has been faithfully
-          loving them for thirty years and I get to lend my hands and voice to
-          that work.
+          We spent the next year planning, praying, and preparing to return —
+          this time with 28 people from our church. We wanted them to get to
+          experience what we had.
         </p>
         <p>
-          I'm going because the Gospel is true, and because the same Jesus
-          who met me in a small concrete classroom is the one who calls me
-          back.
+          Early in the trip, a thought just kind of dropped into my head:{" "}
+          <em>what if I came back?</em> Not for a week. For real — long term.
         </p>
+        <p>
+          I knew immediately it wasn't my own idea. So instead of deciding
+          anything, I just started praying. Every single day of that trip:{" "}
+          <em>God, make it clear. Show me if this is what you want me to do.</em>{" "}
+          By the end of the trip, it was clear. And every time I've wondered
+          if I heard wrong, God has just kept reinforcing it.
+        </p>
+
+        <h2 className="font-display pt-8 text-3xl font-medium text-ink">
+          Why Manila
+        </h2>
+        <p>
+          I've asked myself that question a lot. Why me? Why there? I was born
+          into a family that loves me, in a country full of opportunity, with
+          resources and safety most people in the world will never have. Why
+          do I get all of that?
+        </p>
+        <p>
+          I don't have a complete answer. But I know that the life I've been
+          given isn't just for me. And I love the people of Manila — not in
+          an abstract, missionary-poster way. I know some of their names and
+          their stories. I've been there three times now. I know where I'm
+          going and who I'm going back to.
+        </p>
+
+        <h2 className="font-display pt-8 text-3xl font-medium text-ink">
+          What I'm Nervous About
+        </h2>
+        <p>
+          I want to be honest about this part. Adjusting to a completely
+          different way of life is going to be hard. Fewer resources. More
+          discomfort. A new culture. Finding my own community from scratch.
+          And leaving my family — we are so close, all of us — that will
+          probably be the hardest thing.
+        </p>
+        <p>
+          I'm committing to at least a year. I know the homesickness is going
+          to hit hard around the six-month mark, and I want to push through
+          it — to get to the other side and experience what life actually
+          feels like when you've really settled in somewhere new.
+        </p>
+        <p>
+          I'm nervous. I won't pretend otherwise. But I'm nervous, not scared.
+          Because I know who called me here. And He will take care of me.
+        </p>
+
+        <h2 className="font-display pt-8 text-3xl font-medium text-ink">
+          One More Thing
+        </h2>
+        <p>
+          My dad had a vision about thirty years ago — before I was born —
+          for something he called Missions in Action. He'd seen how much time
+          missionaries spent just trying to stay connected with their
+          supporters. And right as the internet was beginning, he saw what
+          could be possible: what if missionaries could stay on the field and
+          stay deeply connected with the people back home who loved them?
+        </p>
+        <p>
+          Life got in the way of that dream. Career, marriage, five kids. And
+          now here I am — his daughter — heading to Manila to do almost
+          exactly what he envisioned. I don't think that's a coincidence
+          either.
+        </p>
+
+        <p className="border-l-2 border-clay/40 pl-6 pt-6 italic text-ink/70">
+          If you've read this far — thank you. It tells me you care. Whether
+          you pray for me once a week, give $25 a month, or someday get on a
+          plane yourself — you are part of this story. I don't take that
+          lightly.
+        </p>
+        <p className="font-display text-right text-xl italic">— Ivy</p>
       </article>
 
       <section className="bg-paper px-6 py-20">
@@ -99,11 +186,12 @@ function StoryPage() {
                 The Next Chapter
               </span>
               <h3 className="font-display mb-6 text-3xl font-medium leading-tight">
-                Will you walk this road with me?
+                Will you hold the rope with me?
               </h3>
               <p className="mb-8 leading-relaxed text-ink/70">
-                Missionaries don't go alone. Every step forward is held up by
-                a community of friends praying and giving from home.
+                I cannot go alone. Some are called to go; others are called to
+                hold the rope — to pray, to give, to stand faithfully with
+                the ones who go.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link
