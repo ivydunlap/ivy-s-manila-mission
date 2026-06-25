@@ -97,41 +97,45 @@ function HomePage() {
         </div>
       </section>
 
-      {/* KIM highlight */}
-      <section className="px-6 py-24">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-16 md:flex-row">
-          <div className="w-full md:w-1/2">
-            <img
-              src={kimChildren.url}
-              alt="Children served through Kids International Ministries"
-              loading="lazy"
-              width={1280}
-              height={896}
-              className="aspect-video w-full rounded-3xl object-cover shadow-sm ring-1 ring-black/5"
-            />
-          </div>
-          <div className="w-full md:w-1/2">
-            <span className="mb-4 block text-[10px] font-bold uppercase tracking-[0.2em] text-sage">
-              Where I'm Serving
-            </span>
-            <h2 className="font-display text-pretty mb-6 text-4xl font-medium leading-tight">
-              Kids International Ministries
-            </h2>
-            <p className="mb-6 leading-relaxed text-ink/70">
-              KIM has been serving the Philippines since 1993, focusing on
-              meeting both physical and spiritual needs. From children's homes
-              and schools to medical clinics and feeding programs, they offer
-              a holistic witness to the love of Christ.
-            </p>
-            <Link
-              to="/mission"
-              className="inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold text-ink transition-colors hover:border-clay"
-            >
-              What I'll be doing →
-            </Link>
-          </div>
+      {/* KIM highlight — full-bleed photographic with overlay */}
+      <section className="relative isolate overflow-hidden">
+        <img
+          src={kimChildren.url}
+          alt="Children served through Kids International Ministries"
+          loading="lazy"
+          width={1280}
+          height={896}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.22 0.04 245 / 0.55) 0%, oklch(0.22 0.04 245 / 0.4) 50%, oklch(0.28 0.06 40 / 0.55) 100%)",
+          }}
+        />
+        <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center md:py-32">
+          <span className="mb-5 block text-[10px] font-bold uppercase tracking-[0.2em] text-white/85">
+            Where I'm Serving
+          </span>
+          <h2 className="font-display text-balance mb-6 text-4xl font-medium leading-tight text-white md:text-5xl">
+            Kids International Ministries
+          </h2>
+          <p className="text-pretty mx-auto mb-8 max-w-[56ch] leading-relaxed text-white/85">
+            KIM has been serving the Philippines since 1993, focusing on
+            meeting both physical and spiritual needs. From children's homes
+            and schools to medical clinics and feeding programs, they offer
+            a holistic witness to the love of Christ.
+          </p>
+          <Link
+            to="/mission"
+            className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
+          >
+            What I'll be doing →
+          </Link>
         </div>
       </section>
+
     </SiteShell>
   );
 }
