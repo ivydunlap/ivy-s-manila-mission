@@ -4,7 +4,7 @@ import { SiteFooter } from "./site-footer";
 
 export function SiteShell({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen bg-base text-ink selection:bg-sage/15">
+    <div className="min-h-screen bg-base text-ink selection:bg-clay/20">
       <SiteNav />
       <main>{children}</main>
       <SiteFooter />
@@ -12,6 +12,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
   );
 }
 
+/** Editorial page header — eyebrow with rule, large display title. */
 export function PageHeader({
   eyebrow,
   title,
@@ -22,22 +23,45 @@ export function PageHeader({
   intro?: string;
 }) {
   return (
-    <section className="px-6 pt-16 pb-12 md:pt-24 md:pb-16">
-      <div className="mx-auto max-w-3xl text-center">
+    <section className="border-b border-ink/10 bg-base px-6 pt-24 pb-16 md:pt-32 md:pb-20">
+      <div className="mx-auto max-w-4xl">
         {eyebrow && (
-          <span className="mb-6 block text-[10px] font-bold uppercase tracking-[0.2em] text-clay">
-            {eyebrow}
-          </span>
+          <div className="mb-8 flex items-center gap-3">
+            <span className="h-px w-10 bg-clay/70" />
+            <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-clay">
+              {eyebrow}
+            </span>
+          </div>
         )}
-        <h1 className="font-display text-balance text-4xl font-medium leading-tight md:text-6xl">
+        <h1 className="font-display text-balance text-4xl font-medium leading-[1.05] md:text-6xl lg:text-7xl">
           {title}
         </h1>
         {intro && (
-          <p className="text-pretty mx-auto mt-8 max-w-[56ch] text-lg leading-relaxed text-ink/70">
+          <p className="text-pretty mt-8 max-w-[58ch] text-lg leading-relaxed text-ink/70">
             {intro}
           </p>
         )}
       </div>
     </section>
+  );
+}
+
+/** Small reusable eyebrow with rule. */
+export function Eyebrow({
+  children,
+  tone = "clay",
+}: {
+  children: ReactNode;
+  tone?: "clay" | "white";
+}) {
+  const color = tone === "white" ? "text-white/85" : "text-clay";
+  const rule = tone === "white" ? "bg-white/60" : "bg-clay/70";
+  return (
+    <div className="mb-6 flex items-center gap-3">
+      <span className={`h-px w-10 ${rule}`} />
+      <span className={`text-[10px] font-bold uppercase tracking-[0.28em] ${color}`}>
+        {children}
+      </span>
+    </div>
   );
 }
