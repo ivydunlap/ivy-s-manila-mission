@@ -99,6 +99,42 @@ function PartnershipPage() {
         </div>
       </section>
 
+      {/* Budget breakdown */}
+      <section className="px-6 pt-20">
+        <div className="mx-auto max-w-5xl rounded-3xl bg-paper p-10 ring-1 ring-black/5 md:p-14">
+          <div className="grid gap-10 md:grid-cols-[1fr_1.2fr]">
+            <div>
+              <span className="mb-4 block text-[10px] font-bold uppercase tracking-[0.2em] text-clay">
+                Year One Budget
+              </span>
+              <h2 className="font-display text-balance text-3xl font-medium leading-tight md:text-4xl">
+                $15,000+ to fund a full year on the field.
+              </h2>
+              <p className="mt-6 leading-relaxed text-ink/70">
+                Here's exactly what your support covers. Nothing hidden —
+                this is the real cost of living and ministering in Manila
+                for twelve months.
+              </p>
+            </div>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {budget.map((item) => (
+                <li
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl bg-base px-4 py-3 text-sm leading-snug text-ink/80 ring-1 ring-black/5"
+                >
+                  <span
+                    aria-hidden
+                    className="mt-1.5 inline-block size-1.5 shrink-0 rounded-full bg-clay"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+
       {/* Hold the rope quote */}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-3xl rounded-3xl bg-ink px-10 py-16 text-center text-base/0">
