@@ -102,44 +102,49 @@ function HomePage() {
         </div>
       </section>
 
-      {/* KIM highlight — full-bleed photographic with overlay */}
-      <section className="relative isolate overflow-hidden">
-        <img
-          src={kimChildren.url}
-          alt="Children served through Kids International Ministries"
-          loading="lazy"
-          width={1280}
-          height={896}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, oklch(0.22 0.04 245 / 0.55) 0%, oklch(0.22 0.04 245 / 0.4) 50%, oklch(0.28 0.06 40 / 0.55) 100%)",
-          }}
-        />
-        <div className="relative mx-auto flex min-h-[70vh] max-w-3xl flex-col items-center justify-center px-6 py-24 text-center md:py-32">
-          <span className="mb-5 block text-[10px] font-bold uppercase tracking-[0.2em] text-white/85">
-            Where I'm Serving
-          </span>
-          <h2 className="font-display text-balance mb-6 text-4xl font-medium leading-tight text-white md:text-5xl">
-            Kids International Ministries
-          </h2>
-          <p className="text-pretty mx-auto mb-8 max-w-[56ch] leading-relaxed text-white/85">
-            KIM has been serving the Philippines for over thirty years —
-            children's homes, schools, medical clinics, feeding programs, and
-            family ministry. I'll be serving as an intern to Director Norman
-            Denler, helping teams who come to serve and walking alongside the
-            kids and families who have already captured my heart.
-          </p>
+      {/* KIM highlight — editorial split layout */}
+      <section className="bg-ink/[0.04] py-20 md:py-28">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-12 md:gap-14">
+          {/* Photo — offset card with frame */}
+          <div className="relative md:col-span-7">
+            <div className="absolute -inset-3 -z-10 rounded-sm bg-clay/15 md:-inset-4" />
+            <img
+              src={kimChildren.url}
+              alt="Children served through Kids International Ministries"
+              loading="lazy"
+              width={1280}
+              height={896}
+              className="aspect-[4/3] h-auto w-full rounded-sm object-cover shadow-lg"
+            />
+          </div>
 
-          <Link
-            to="/mission"
-            className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
-          >
-            What I'll be doing →
-          </Link>
+          {/* Text */}
+          <div className="md:col-span-5">
+            <span className="mb-5 block text-[10px] font-bold uppercase tracking-[0.25em] text-clay">
+              Where I'm Serving
+            </span>
+            <h2 className="font-display text-balance mb-3 text-3xl font-medium leading-[1.1] md:text-4xl">
+              Kids International
+              <br />
+              <span className="italic text-clay/90">Ministries</span>
+            </h2>
+            <div className="my-6 h-px w-12 bg-clay/40" />
+            <p className="text-pretty mb-8 leading-relaxed text-ink/75">
+              KIM has been serving the Philippines for over thirty years —
+              children's homes, schools, medical clinics, feeding programs,
+              and family ministry. I'll be serving as an intern to Director
+              Norman Denler, helping teams who come to serve and walking
+              alongside the kids and families who have already captured my
+              heart.
+            </p>
+
+            <Link
+              to="/mission"
+              className="font-display inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic transition-colors hover:border-clay"
+            >
+              What I'll be doing →
+            </Link>
+          </div>
         </div>
       </section>
 
