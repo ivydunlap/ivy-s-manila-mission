@@ -9,7 +9,7 @@ export const Route = createFileRoute("/partnership")({
       {
         name: "description",
         content:
-          "Two ways to partner with Ivy in Manila: prayer and financial giving. Includes a QR code for easy giving.",
+          "Two ways to partner with Ivy in Manila: prayer and financial giving. Goal: $15,000+ to fully fund her first year with KIM.",
       },
       { property: "og:title", content: "Partnership — Ivy Dunlap" },
       {
@@ -21,14 +21,27 @@ export const Route = createFileRoute("/partnership")({
   component: PartnershipPage,
 });
 
+const budget = [
+  "Housing & food ($500/month)",
+  "Transportation",
+  "Ministry tools",
+  "Tagalog lessons",
+  "Staff retreats",
+  "Flights to and from the Philippines",
+  "Personal living expenses",
+  "Emergency needs",
+  "Opportunities to give within the community",
+];
+
 function PartnershipPage() {
   return (
     <SiteShell>
       <PageHeader
         eyebrow="Partnership"
         title="Will you hold the rope?"
-        intro="There's an old missions story about William Carey, who told his friends as he stepped into the unknown: 'I will go down, if you will hold the rope.' That's what I'm asking too."
+        intro="Before William Carey left for India in 1793, he told his friend Andrew Fuller: 'I will go down into the pit if you will hold the rope.' Some are called to go. Others are called to hold the rope. Different roles, same surrender, same mission."
       />
+
 
       {/* Two partnership cards */}
       <section className="px-6">
@@ -40,10 +53,14 @@ function PartnershipPage() {
             <h2 className="font-display mb-3 text-3xl font-medium">
               Prayer Partners
             </h2>
+            <p className="mb-4 leading-relaxed text-ink/70">
+              Prayer is the foundation of everything I'm stepping into. Prayer
+              partners commit to praying for my transition to Manila, the
+              children and families at KIM, the teams who come to serve, and
+              my spiritual growth, protection, and dependence on God.
+            </p>
             <p className="mb-6 leading-relaxed text-ink/70">
-              The most important partnership is in prayer. Sign up to receive
-              monthly prayer updates with specific requests, names, and
-              answered prayers from the field.
+              I'd love to share specific requests and updates with you.
             </p>
             <a
               href="mailto:hello@ivydunlap.com?subject=Prayer%20Team"
@@ -61,9 +78,11 @@ function PartnershipPage() {
               Financial Partners
             </h2>
             <p className="mb-6 leading-relaxed text-ink/70">
-              Monthly and one-time gifts cover housing, ministry costs, and
-              travel back to visit supporting churches. Every gift is
-              tax-deductible through Kids International Ministries.
+              My goal is to raise <strong>$15,000+</strong> to fully fund my
+              first year — through monthly gifts or one-time gifts. Both make
+              a meaningful impact, and every gift is tax-deductible through
+              Kids International Ministries.
+
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <a
