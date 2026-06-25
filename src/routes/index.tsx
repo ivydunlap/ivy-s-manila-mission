@@ -102,34 +102,46 @@ function HomePage() {
         </div>
       </section>
 
-      {/* KIM highlight — editorial split layout */}
-      <section className="bg-ink/[0.04] py-20 md:py-28">
-        <div className="mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-6 md:grid-cols-12 md:gap-14">
-          {/* Photo — offset card with frame */}
-          <div className="relative md:col-span-7">
-            <div className="absolute -inset-3 -z-10 rounded-sm bg-clay/15 md:-inset-4" />
-            <img
-              src={kimChildren.url}
-              alt="Children served through Kids International Ministries"
-              loading="lazy"
-              width={1280}
-              height={896}
-              className="aspect-[4/3] h-auto w-full rounded-sm object-cover shadow-lg"
-            />
-          </div>
+      {/* KIM highlight — overlay, asymmetric editorial */}
+      <section className="relative isolate overflow-hidden">
+        <img
+          src={kimChildren.url}
+          alt="Children served through Kids International Ministries"
+          loading="lazy"
+          width={1280}
+          height={896}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+        {/* Side-weighted overlay — dark on the left, fading right */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(95deg, oklch(0.22 0.04 245 / 0.82) 0%, oklch(0.22 0.04 245 / 0.65) 38%, oklch(0.22 0.04 245 / 0.15) 70%, transparent 100%)",
+          }}
+        />
+        {/* Subtle warm vignette at bottom */}
+        <div
+          className="absolute inset-x-0 bottom-0 h-1/3"
+          style={{
+            background:
+              "linear-gradient(180deg, transparent 0%, oklch(0.28 0.06 40 / 0.35) 100%)",
+          }}
+        />
 
-          {/* Text */}
-          <div className="md:col-span-5">
-            <span className="mb-5 block text-[10px] font-bold uppercase tracking-[0.25em] text-clay">
-              Where I'm Serving
-            </span>
-            <h2 className="font-display text-balance mb-3 text-3xl font-medium leading-[1.1] md:text-4xl">
-              Kids International
-              <br />
-              <span className="italic text-clay/90">Ministries</span>
+        <div className="relative mx-auto grid min-h-[60vh] max-w-6xl grid-cols-12 items-center px-6 py-20 md:min-h-[70vh] md:py-28">
+          <div className="col-span-12 max-w-[34rem] md:col-span-7">
+            <div className="mb-6 flex items-center gap-3">
+              <span className="h-px w-10 bg-white/60" />
+              <span className="text-[10px] font-bold uppercase tracking-[0.28em] text-white/85">
+                Where I'm Serving
+              </span>
+            </div>
+            <h2 className="font-display text-balance mb-6 text-4xl font-medium leading-[1.05] text-white md:text-6xl">
+              Kids International{" "}
+              <span className="italic">Ministries</span>
             </h2>
-            <div className="my-6 h-px w-12 bg-clay/40" />
-            <p className="text-pretty mb-8 leading-relaxed text-ink/75">
+            <p className="text-pretty mb-8 max-w-[52ch] leading-relaxed text-white/85">
               KIM has been serving the Philippines for over thirty years —
               children's homes, schools, medical clinics, feeding programs,
               and family ministry. I'll be serving as an intern to Director
@@ -140,7 +152,7 @@ function HomePage() {
 
             <Link
               to="/mission"
-              className="font-display inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic transition-colors hover:border-clay"
+              className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
             >
               What I'll be doing →
             </Link>
