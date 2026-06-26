@@ -1,130 +1,160 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
+import { posts, getPostsByYear } from "@/lib/newsletter-posts";
 
 export const Route = createFileRoute("/newsletter")({
   head: () => ({
     meta: [
-      { title: "Newsletter — Ivy Dunlap" },
+      { title: "Newsletter Updates — Ivy Dunlap" },
       {
         name: "description",
         content:
-          "Monthly updates from Ivy Dunlap in Manila — stories, prayer requests, and what God is doing.",
+          "Monthly updates, stories, and prayer requests from my ministry in Manila. Read past newsletters or subscribe to stay connected.",
       },
-      { property: "og:title", content: "Newsletter — Ivy Dunlap" },
+      { property: "og:title", content: "Newsletter Updates — Ivy Dunlap" },
       {
         property: "og:description",
-        content: "Monthly updates from the field in Manila.",
+        content:
+          "Monthly updates, stories, and prayer requests from my ministry in Manila.",
       },
     ],
   }),
   component: NewsletterPage,
 });
 
-const posts = [
-  {
-    date: "May 2026",
-    title: "First month in Manila",
-    excerpt:
-      "The jet lag has worn off, my Tagalog is hilariously bad, and the kids at KidsConnect have officially adopted me. Here's what God has been doing.",
-  },
-  {
-    date: "March 2026",
-    title: "Packing up a life",
-    excerpt:
-      "Saying goodbye is the strangest kind of grief — heavy and hopeful at the same time. A few thoughts on leaving well.",
-  },
-  {
-    date: "January 2026",
-    title: "Funded! (Almost.)",
-    excerpt:
-      "We're 87% of the way to monthly support. To everyone who has prayed, given, and shared — thank you. Here's what's next.",
-  },
-  {
-    date: "November 2025",
-    title: "Why Kids International Ministries",
-    excerpt:
-      "I get asked all the time: why this organization? Here's the story of how God lined up the partnership.",
-  },
-];
-
 function NewsletterPage() {
+  const sorted = [...posts].sort((a, b) => b.isoDate.localeCompare(a.isoDate));
+  const archive = getPostsByYear();
+
   return (
     <SiteShell>
       <PageHeader
         eyebrow="Newsletter"
-        title="From the field."
-        intro="Monthly stories, prayer requests, and updates from Manila. The best way to follow along."
+        title="Newsletter Updates"
+        intro="Monthly updates, stories, and prayer requests from my ministry in Manila. Read past newsletters or subscribe to stay connected."
       />
 
-      {/* Subscribe — editorial bar */}
-      <section className="border-b border-ink/10 bg-paper/60 px-6 py-16 md:py-20">
-        <div className="mx-auto grid max-w-5xl gap-10 md:grid-cols-[1fr_1.2fr] md:items-end md:gap-16">
+      <section className="px-6 py-16 md:py-24">
+        <div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[1fr_18rem] lg:gap-16">
+          {/* Posts */}
           <div>
-            <Eyebrow>Subscribe</Eyebrow>
-            <h2 className="font-display text-3xl font-medium leading-tight md:text-4xl">
-              One thoughtful email{" "}
-              <span className="italic text-clay/90">a month.</span>
-            </h2>
-            <p className="mt-4 text-sm leading-relaxed text-ink/65">
-              No spam, just the real stuff — stories, prayer requests, and
-              what God is doing.
-            </p>
-          </div>
-          <form
-            className="flex flex-col gap-3 sm:flex-row"
-            onSubmit={(e) => e.preventDefault()}
-          >
-            <input
-              type="email"
-              required
-              placeholder="you@email.com"
-              className="flex-1 border-b border-ink/25 bg-transparent px-1 py-3 text-base placeholder:text-ink/40 focus:border-clay focus:outline-none"
-            />
-            <button
-              type="submit"
-              className="rounded-full bg-clay px-7 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
+            <div className="mb-10 flex items-end justify-between border-b border-ink/10 pb-5">
+              <div>
+                <Eyebrow>Latest</Eyebrow>
+                <h2 className="font-display text-2xl font-medium md:text-3xl">
+                  All <span className="italic text-clay/90">letters</span>
+                </h2>
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/45">
+                {posts.length} posts
+              </span>
+            </div>
 
-      {/* Archive — editorial list */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto max-w-3xl">
-          <div className="mb-12 flex items-end justify-between border-b border-ink/15 pb-6">
+            <div className="grid gap-10 sm:grid-cols-2">
+              {sorted.map((p) => (
+                <article key={p.slug} className="group flex flex-col">
+                  <Link
+                    to="/newsletter/$slug"
+                    params={{ slug: p.slug }}
+                    className="block overflow-hidden rounded-2xl bg-paper"
+                  >
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <img
+                        src={p.cover}
+                        alt={p.title}
+                        loading="lazy"
+                        className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                  <div className="mt-5">
+                    <div className="text-[10px] font-bold uppercase tracking-[0.25em] text-clay">
+                      {p.date}
+                    </div>
+                    <h3 className="font-display mt-3 text-2xl font-medium leading-snug transition-colors group-hover:text-clay">
+                      <Link to="/newsletter/$slug" params={{ slug: p.slug }}>
+                        {p.title}
+                      </Link>
+                    </h3>
+                    <p className="mt-3 leading-relaxed text-ink/70">{p.excerpt}</p>
+                    <Link
+                      to="/newsletter/$slug"
+                      params={{ slug: p.slug }}
+                      className="font-display mt-5 inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic transition-colors hover:border-clay"
+                    >
+                      Read more →
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+
+          {/* Sidebar */}
+          <aside className="space-y-12 lg:sticky lg:top-24 lg:self-start">
+            <div className="rounded-2xl border border-ink/10 bg-paper/70 p-7">
+              <Eyebrow>Subscribe</Eyebrow>
+              <h3 className="font-display text-2xl font-medium leading-tight">
+                One email <span className="italic text-clay/90">a month.</span>
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink/65">
+                Stories, prayer requests, and what God is doing in Manila. No
+                spam, ever.
+              </p>
+              <form
+                className="mt-5 flex flex-col gap-3"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <input
+                  type="email"
+                  required
+                  placeholder="you@email.com"
+                  className="w-full rounded-full border border-ink/15 bg-base px-4 py-3 text-sm placeholder:text-ink/40 focus:border-clay focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="rounded-full bg-clay px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+
             <div>
               <Eyebrow>Archive</Eyebrow>
-              <h2 className="font-display text-3xl font-medium md:text-4xl">
-                Past <span className="italic">letters.</span>
-              </h2>
+              <h3 className="font-display text-xl font-medium">By year</h3>
+              <div className="mt-5 space-y-6">
+                {archive.map((group) => (
+                  <div key={group.year}>
+                    <div className="mb-2 flex items-baseline justify-between border-b border-ink/10 pb-2">
+                      <span className="font-display text-lg font-medium italic">
+                        {group.year}
+                      </span>
+                      <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/40">
+                        {group.items.length}
+                      </span>
+                    </div>
+                    <ul className="space-y-2">
+                      {group.items.map((p) => (
+                        <li key={p.slug}>
+                          <Link
+                            to="/newsletter/$slug"
+                            params={{ slug: p.slug }}
+                            className="group flex items-baseline justify-between gap-3 text-sm text-ink/75 transition-colors hover:text-clay"
+                          >
+                            <span className="leading-snug">{p.title}</span>
+                            <span className="shrink-0 text-[10px] uppercase tracking-widest text-ink/40">
+                              {p.date.split(" ")[0].slice(0, 3)}
+                            </span>
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
             </div>
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-ink/45">
-              {posts.length} posts
-            </span>
-          </div>
-          <div className="divide-y divide-ink/10">
-            {posts.map((p) => (
-              <article key={p.title} className="group grid grid-cols-1 gap-2 py-10 md:grid-cols-[8rem_1fr] md:gap-8">
-                <div className="font-display text-sm italic text-clay">
-                  {p.date}
-                </div>
-                <div>
-                  <h3 className="font-display mb-3 text-2xl font-medium leading-snug transition-colors group-hover:text-clay md:text-3xl">
-                    <Link to="/newsletter">{p.title}</Link>
-                  </h3>
-                  <p className="leading-relaxed text-ink/70">{p.excerpt}</p>
-                  <Link
-                    to="/newsletter"
-                    className="font-display mt-5 inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic transition-colors hover:border-clay"
-                  >
-                    Read more →
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
+          </aside>
         </div>
       </section>
     </SiteShell>
