@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, Eyebrow } from "@/components/site-shell";
-import ivyServing from "@/assets/ivy-serving.jpg";
-import manilaStreet from "@/assets/manila-street.jpg";
+import storyWorshipAsset from "@/assets/story-worship.jpeg.asset.json";
+import storyCommunityAsset from "@/assets/story-community.jpeg.asset.json";
+
+const ivyServing = storyWorshipAsset.url;
+const manilaStreet = storyCommunityAsset.url;
 
 export const Route = createFileRoute("/story")({
   head: () => ({
