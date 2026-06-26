@@ -1,6 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell, Eyebrow } from "@/components/site-shell";
-import { getPostBySlug, posts } from "@/lib/newsletter-posts";
+import { getPostBySlug, posts, type PostBlock } from "@/lib/newsletter-posts";
 
 export const Route = createFileRoute("/newsletter/$slug")({
   head: ({ params }) => {
@@ -99,7 +99,7 @@ function PostPage() {
         {/* Body */}
         <div className="px-6 py-16 md:py-20">
           <div className="mx-auto max-w-2xl space-y-7 text-lg leading-relaxed text-ink/80">
-            {post.blocks.map((b, i) => {
+            {post.blocks.map((b: PostBlock, i: number) => {
               if (b.type === "p") return <p key={i}>{b.text}</p>;
               if (b.type === "h")
                 return (
@@ -146,7 +146,7 @@ function PostPage() {
                       Prayer requests
                     </div>
                     <ul className="mt-4 space-y-3 text-base text-ink/80">
-                      {b.items.map((item, j) => (
+                      {b.items.map((item: string, j: number) => (
                         <li key={j} className="flex gap-3">
                           <span className="mt-2 inline-block size-1.5 shrink-0 rounded-full bg-clay" />
                           <span className="leading-relaxed">{item}</span>
