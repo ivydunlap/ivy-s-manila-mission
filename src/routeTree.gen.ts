@@ -17,6 +17,7 @@ import { Route as NeedRouteImport } from './routes/need'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
+import { Route as ApiSubscribeRouteImport } from './routes/api.subscribe'
 
 const StoryRoute = StoryRouteImport.update({
   id: '/story',
@@ -58,6 +59,11 @@ const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => NewsletterRoute,
 } as any)
+const ApiSubscribeRoute = ApiSubscribeRouteImport.update({
+  id: '/api/subscribe',
+  path: '/api/subscribe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -67,6 +73,7 @@ export interface FileRoutesByFullPath {
   '/partnership': typeof PartnershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
+  '/api/subscribe': typeof ApiSubscribeRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
 }
 export interface FileRoutesByTo {
@@ -77,6 +84,7 @@ export interface FileRoutesByTo {
   '/partnership': typeof PartnershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
+  '/api/subscribe': typeof ApiSubscribeRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
 }
 export interface FileRoutesById {
@@ -88,6 +96,7 @@ export interface FileRoutesById {
   '/partnership': typeof PartnershipRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
+  '/api/subscribe': typeof ApiSubscribeRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
 }
 export interface FileRouteTypes {
@@ -100,6 +109,7 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/sitemap.xml'
     | '/story'
+    | '/api/subscribe'
     | '/newsletter/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -110,6 +120,7 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/sitemap.xml'
     | '/story'
+    | '/api/subscribe'
     | '/newsletter/$slug'
   id:
     | '__root__'
@@ -120,6 +131,7 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/sitemap.xml'
     | '/story'
+    | '/api/subscribe'
     | '/newsletter/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -131,6 +143,7 @@ export interface RootRouteChildren {
   PartnershipRoute: typeof PartnershipRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StoryRoute: typeof StoryRoute
+  ApiSubscribeRoute: typeof ApiSubscribeRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NewsletterSlugRouteImport
       parentRoute: typeof NewsletterRoute
     }
+    '/api/subscribe': {
+      id: '/api/subscribe'
+      path: '/api/subscribe'
+      fullPath: '/api/subscribe'
+      preLoaderRoute: typeof ApiSubscribeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -214,6 +234,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnershipRoute: PartnershipRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StoryRoute: StoryRoute,
+  ApiSubscribeRoute: ApiSubscribeRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

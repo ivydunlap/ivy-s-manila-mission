@@ -1,5 +1,6 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell, Eyebrow } from "@/components/site-shell";
+import { SubscribeForm } from "@/components/subscribe-form";
 import { getPostBySlug, posts, type PostBlock } from "@/lib/newsletter-posts";
 
 export const Route = createFileRoute("/newsletter/$slug")({
@@ -212,23 +213,7 @@ function PostPage() {
                 One thoughtful email a month — stories, prayer requests, and
                 what God is doing in Manila.
               </p>
-              <form
-                className="mt-6 flex flex-col gap-3 sm:flex-row"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type="email"
-                  required
-                  placeholder="you@email.com"
-                  className="flex-1 rounded-full border border-ink/15 bg-base px-5 py-3 text-sm placeholder:text-ink/40 focus:border-clay focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-clay px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <SubscribeForm layout="inline" />
             </div>
             <div className="rounded-2xl border border-ink/10 bg-base p-8">
               <Eyebrow>Partner</Eyebrow>
