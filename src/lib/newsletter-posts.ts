@@ -1,5 +1,6 @@
 import kimChildren from "@/assets/kim-children.jpeg.asset.json";
 import heroAsset from "@/assets/ivy-hero.jpeg.asset.json";
+import { assetUrl } from "@/lib/utils";
 
 export type PostBlock =
   | { type: "p"; text: string }
@@ -28,7 +29,7 @@ export const posts: NewsletterPost[] = [
     year: 2026,
     excerpt:
       "The jet lag has worn off, my Tagalog is hilariously bad, and the kids at KidsConnect have officially adopted me. Here's what God has been doing.",
-    cover: kimChildren.url,
+    cover: assetUrl(kimChildren.url),
     blocks: [
       {
         type: "p",
@@ -41,7 +42,7 @@ export const posts: NewsletterPost[] = [
       },
       {
         type: "img",
-        src: heroAsset.url,
+        src: assetUrl(heroAsset.url),
         alt: "View from the apartment window",
         caption: "Sunrise over the neighborhood — my favorite few minutes of the day.",
       },
@@ -78,7 +79,7 @@ export const posts: NewsletterPost[] = [
     year: 2026,
     excerpt:
       "Saying goodbye is the strangest kind of grief — heavy and hopeful at the same time. A few thoughts on leaving well.",
-    cover: heroAsset.url,
+    cover: assetUrl(heroAsset.url),
     blocks: [
       {
         type: "p",
@@ -108,7 +109,7 @@ export const posts: NewsletterPost[] = [
     year: 2026,
     excerpt:
       "We're 87% of the way to monthly support. To everyone who has prayed, given, and shared — thank you. Here's what's next.",
-    cover: kimChildren.url,
+    cover: assetUrl(kimChildren.url),
     blocks: [
       {
         type: "p",
@@ -138,7 +139,7 @@ export const posts: NewsletterPost[] = [
     year: 2025,
     excerpt:
       "I get asked all the time: why this organization? Here's the story of how God lined up the partnership.",
-    cover: heroAsset.url,
+    cover: assetUrl(heroAsset.url),
     blocks: [
       {
         type: "p",

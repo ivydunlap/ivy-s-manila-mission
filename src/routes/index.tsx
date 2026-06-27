@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/site-shell";
 import heroAsset from "@/assets/ivy-hero.jpeg.asset.json";
 import kimChildren from "@/assets/kim-children.jpeg.asset.json";
+import { assetUrl } from "@/lib/utils";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,7 +30,7 @@ function HomePage() {
       {/* Hero — full-bleed photographic */}
       <section className="relative isolate -mt-px overflow-hidden">
         <img
-          src={heroAsset.url}
+          src={assetUrl(heroAsset.url)}
           alt="Ivy walking down a Manila path arm-in-arm with three young girls"
           width={1366}
           height={1822}
@@ -105,7 +106,7 @@ function HomePage() {
       {/* KIM highlight — overlay, asymmetric editorial */}
       <section className="relative isolate overflow-hidden">
         <img
-          src={kimChildren.url}
+          src={assetUrl(kimChildren.url)}
           alt="Children served through Kids International Ministries"
           loading="lazy"
           width={1280}

@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  vite: {
+    // Allow overriding the base path via VITE_BASE env var.
+    // Set VITE_BASE=/ivy-s-manila-mission/ when building for GitHub Pages.
+    base: process.env.VITE_BASE ?? "/",
+  },
 });

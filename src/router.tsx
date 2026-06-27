@@ -5,9 +5,13 @@ import { routeTree } from "./routeTree.gen";
 export const getRouter = () => {
   const queryClient = new QueryClient();
 
+  // Strip trailing slash so basepath is e.g. "/ivy-s-manila-mission" not "/ivy-s-manila-mission/"
+  const basepath = (import.meta.env.BASE_URL || "/").replace(/\/$/, "") || "/";
+
   const router = createRouter({
     routeTree,
     context: { queryClient },
+    basepath,
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
   });
