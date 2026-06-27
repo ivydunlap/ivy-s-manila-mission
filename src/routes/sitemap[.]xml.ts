@@ -6,7 +6,7 @@ const BASE_URL = "";
 const paths = [
   { path: "/", priority: "1.0", changefreq: "weekly" as const },
   { path: "/story", priority: "0.8", changefreq: "monthly" as const },
-  { path: "/mission", priority: "0.8", changefreq: "monthly" as const },
+  
   { path: "/need", priority: "0.7", changefreq: "monthly" as const },
   { path: "/partnership", priority: "0.9", changefreq: "monthly" as const },
   { path: "/newsletter", priority: "0.7", changefreq: "weekly" as const },

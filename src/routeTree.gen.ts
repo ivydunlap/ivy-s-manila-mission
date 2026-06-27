@@ -14,7 +14,6 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as NewsletterRouteImport } from './routes/newsletter'
 import { Route as NeedRouteImport } from './routes/need'
-import { Route as MissionRouteImport } from './routes/mission'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
@@ -44,11 +43,6 @@ const NeedRoute = NeedRouteImport.update({
   path: '/need',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MissionRoute = MissionRouteImport.update({
-  id: '/mission',
-  path: '/mission',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -68,7 +62,6 @@ const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/mission': typeof MissionRoute
   '/need': typeof NeedRoute
   '/newsletter': typeof NewsletterRouteWithChildren
   '/partnership': typeof PartnershipRoute
@@ -79,7 +72,6 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/mission': typeof MissionRoute
   '/need': typeof NeedRoute
   '/newsletter': typeof NewsletterRouteWithChildren
   '/partnership': typeof PartnershipRoute
@@ -91,7 +83,6 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
-  '/mission': typeof MissionRoute
   '/need': typeof NeedRoute
   '/newsletter': typeof NewsletterRouteWithChildren
   '/partnership': typeof PartnershipRoute
@@ -104,7 +95,6 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
-    | '/mission'
     | '/need'
     | '/newsletter'
     | '/partnership'
@@ -115,7 +105,6 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
-    | '/mission'
     | '/need'
     | '/newsletter'
     | '/partnership'
@@ -126,7 +115,6 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
-    | '/mission'
     | '/need'
     | '/newsletter'
     | '/partnership'
@@ -138,7 +126,6 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
-  MissionRoute: typeof MissionRoute
   NeedRoute: typeof NeedRoute
   NewsletterRoute: typeof NewsletterRouteWithChildren
   PartnershipRoute: typeof PartnershipRoute
@@ -183,13 +170,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NeedRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/mission': {
-      id: '/mission'
-      path: '/mission'
-      fullPath: '/mission'
-      preLoaderRoute: typeof MissionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -229,7 +209,6 @@ const NewsletterRouteWithChildren = NewsletterRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
-  MissionRoute: MissionRoute,
   NeedRoute: NeedRoute,
   NewsletterRoute: NewsletterRouteWithChildren,
   PartnershipRoute: PartnershipRoute,
@@ -239,13 +218,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
