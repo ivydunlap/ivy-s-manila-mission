@@ -29,16 +29,39 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build (static preset for GitHub Pages)
+      - name: Build
         run: npm run build
         env:
           VITE_BASE: /ivy-s-manila-mission/
-          NITRO_PRESET: static
+
+      - name: Generate index.html and 404.html for GitHub Pages SPA
+        run: |
+          BASE=/ivy-s-manila-mission
+          CSS=$(ls .output/public/assets/styles-*.css 2>/dev/null | head -1 | xargs basename)
+          JS=$(ls .output/public/assets/index-*.js 2>/dev/null | head -1 | xargs basename)
+          cat > .output/public/index.html << HTMLEOF
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <title>Ivy Dunlap — Missionary to Manila</title>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..600;1,400..600&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&display=swap">
+            <link rel="stylesheet" href="${BASE}/assets/${CSS}">
+          </head>
+          <body>
+            <script type="module" src="${BASE}/assets/${JS}"></script>
+          </body>
+          </html>
+          HTMLEOF
+          # 404.html lets GitHub Pages serve the SPA shell for all routes
+          cp .output/public/index.html .output/public/404.html
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Nitro static preset outputs to .output/public
           path: .output/public
 
   deploy:
