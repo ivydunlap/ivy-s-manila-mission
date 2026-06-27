@@ -32,12 +32,12 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /ivy-s-manila-mission/
+          VITE_BASE: /
 
       - name: Generate index.html and 404.html for GitHub Pages SPA
         run: node scripts/generate-gh-pages.mjs
         env:
-          VITE_BASE: /ivy-s-manila-mission/
+          VITE_BASE: /
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
