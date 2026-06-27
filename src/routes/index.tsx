@@ -49,7 +49,7 @@ function HomePage() {
             Manila, Philippines
           </span>
           <h1 className="font-display text-balance mb-8 max-w-[18ch] text-5xl font-medium leading-[1.05] text-white md:text-7xl lg:text-[5.25rem]">
-            Walking with the children of Manila.
+            whoohoo
           </h1>
           <p className="text-pretty mx-auto mb-10 max-w-[52ch] text-lg leading-relaxed text-white/85">
             I'm moving to Manila to serve full-time with Kids International
