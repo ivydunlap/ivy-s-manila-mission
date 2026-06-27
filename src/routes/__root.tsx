@@ -91,6 +91,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Ivy Dunlap — Missionary to Manila" },
+      { name: "description", content: "Ivy's Manila Mission is a website for a Christian missionary, providing information about her calling, ministry, and ways to partner." },
+      { property: "og:description", content: "Ivy's Manila Mission is a website for a Christian missionary, providing information about her calling, ministry, and ways to partner." },
+      { name: "twitter:description", content: "Ivy's Manila Mission is a website for a Christian missionary, providing information about her calling, ministry, and ways to partner." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/055e58e3-7a5d-481a-93fb-8f9496023d40/id-preview-d1796414--d1acd217-f9af-4ea0-bcd2-e5506e7f93f4.lovable.app-1782518825125.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/055e58e3-7a5d-481a-93fb-8f9496023d40/id-preview-d1796414--d1acd217-f9af-4ea0-bcd2-e5506e7f93f4.lovable.app-1782518825125.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
