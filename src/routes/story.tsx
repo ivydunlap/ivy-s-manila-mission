@@ -147,14 +147,7 @@ function StoryPage() {
             I want to be honest about this part. Adjusting to a completely
             different way of life is going to be hard. Fewer resources. More
             discomfort. A new culture. Finding my own community from
-            scratch. And leaving my family — we are so close, all of us —
-            that will probably be the hardest thing.
-          </p>
-          <p>
-            I'm committing to at least a year. I know the homesickness is
-            going to hit hard around the six-month mark, and I want to push
-            through it — to get to the other side and experience what life
-            actually feels like when you've really settled in somewhere new.
+            scratch. And leaving my family.
           </p>
           <p className="font-display text-2xl italic text-ink">
             I'm nervous. I won't pretend otherwise. But I'm nervous, not
