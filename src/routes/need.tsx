@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
+import philippinesMap from "@/assets/philippines-map.svg.asset.json";
 
 export const Route = createFileRoute("/need")({
   head: () => ({
