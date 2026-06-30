@@ -97,15 +97,10 @@ function StoryPage() {
             I arrived tired, a little empty, and ready to get it over with.
             What I found was something I was completely unprepared for. I
             met people living in poverty — real poverty, nothing like the
-            world I had always known — and they had more joy and love to
+            world I had always known. But, they had more joy and love to
             give than almost anyone I had ever met. Their faith wasn't
             theoretical. It was steady and real and alive in a way that made
             my own feel brand new.
-          </p>
-          <p>
-            I left filled. Changed. My heart on fire for God. And devastated
-            to say goodbye. My whole family felt it. We knew we had to go
-            back.
           </p>
         </Chapter>
 
