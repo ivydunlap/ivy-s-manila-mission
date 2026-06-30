@@ -69,14 +69,16 @@ function StoryPage() {
 
         <Chapter eyebrow="Chapter One" title="How We Found KIM">
           <p>
-            Two years ago, my family planned a vacation trip through Southeast
-            Asia. At the end of it, my parents decided to tag on a missions
-            trip. My mom literally googled mission organizations in Southeast
-            Asia and started looking through options. A lot of them had
-            restrictions — kids can come but only if they're a certain age,
-            or they can only do certain things. Then she found Kids
-            International Ministries. What stood out to her immediately was
-            that they said: <em>we love families. Bring your kids, any ages.</em>
+            Two years ago, my family planned a vacation through Southeast Asia. My parents had taken my siblings and I on other amazing trips before, but this time they wanted us to see that the world isn’t just perfect Hawaii beaches and Italian pasta. They wanted us to have a deeper perspective on the world— the kind you can only get by actually experiencing it.
+          </p>
+          <p>
+            So, my mom literally googled mission organizations in Southeast Asia and started scrolling through options. Most of them either didn’t allow kids at all or had a ton of restrictions, like “kids can come only if they’re a certain age” or “they can only do certain activities,” and so on. Then she found Kids International Ministries in Manila, Philippines. What stood out immediately was their message: We love families! Bring your kids — any ages.
+          </p>
+          <p>
+            With very little preparation and no idea what to expect, my family set out on our first missions trip together.
+          </p>
+          <p>
+            We didn’t know it then, but after that trip, we would never be the same.
           </p>
         </Chapter>
 
