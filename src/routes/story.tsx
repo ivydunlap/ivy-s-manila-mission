@@ -69,14 +69,19 @@ function StoryPage() {
 
         <Chapter eyebrow="Chapter One" title="How We Found KIM">
           <p>
-            Two years ago, my family planned a vacation trip through Southeast
-            Asia. At the end of it, my parents decided to tag on a missions
-            trip. My mom literally googled mission organizations in Southeast
-            Asia and started looking through options. A lot of them had
-            restrictions — kids can come but only if they're a certain age,
-            or they can only do certain things. Then she found Kids
-            International Ministries. What stood out to her immediately was
-            that they said: <em>we love families. Bring your kids, any ages.</em>
+            Two years ago, my family planned a vacation through Southeast Asia. My parents had taken my siblings and I on other amazing trips before, but this time they wanted us to see that the world isn’t just perfect Hawaii beaches and Italian pasta. They wanted us to have a deeper perspective on the world— the kind you can only get by actually experiencing it.
+          </p>
+          <p>
+            So, my mom literally googled "Missions organizations in Southeast Asia" and began scrolling through options. Most of them either didn't allow kids at all or had a ton of restrictions, like "kids can come but only if they are a certain age," or "they can only do certain activities," and so on. Then, she found Kids International Ministries in Manila, Philippines. What stood out immediately was their message:
+          </p>
+          <p className="font-display italic text-xl text-ink pl-6 border-l-2 border-clay/30 my-6">
+            "We love families! Bring your kids, any ages!"
+          </p>
+          <p>
+            With very little preparation, and no idea what to expect, we hopped on a plane and set out on our first family mission trip.
+          </p>
+          <p>
+            We didn't know it then, but after that trip, we would never be the same.
           </p>
         </Chapter>
 
@@ -95,15 +100,10 @@ function StoryPage() {
             I arrived tired, a little empty, and ready to get it over with.
             What I found was something I was completely unprepared for. I
             met people living in poverty — real poverty, nothing like the
-            world I had always known — and they had more joy and love to
+            world I had always known. But, they had more joy and love to
             give than almost anyone I had ever met. Their faith wasn't
             theoretical. It was steady and real and alive in a way that made
             my own feel brand new.
-          </p>
-          <p>
-            I left filled. Changed. My heart on fire for God. And devastated
-            to say goodbye. My whole family felt it. We knew we had to go
-            back.
           </p>
         </Chapter>
 
