@@ -55,7 +55,7 @@ function StoryPage() {
             <p className="mt-8 max-w-[48ch] text-lg leading-relaxed text-white/85">
               Honestly, I can't fully put into words what this means to me. It
               would be so much easier if you could just get on a plane and
-              experience it yourself. But I'll try.
+              experience it yourself.
             </p>
           </div>
         </div>
