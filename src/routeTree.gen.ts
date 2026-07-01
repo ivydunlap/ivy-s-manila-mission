@@ -14,6 +14,7 @@ import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as NewsletterRouteImport } from './routes/newsletter'
 import { Route as NeedRouteImport } from './routes/need'
+import { Route as MyRoleRouteImport } from './routes/my-role'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
@@ -43,6 +44,11 @@ const NeedRoute = NeedRouteImport.update({
   path: '/need',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MyRoleRoute = MyRoleRouteImport.update({
+  id: '/my-role',
+  path: '/my-role',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -62,6 +68,7 @@ const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/my-role': typeof MyRoleRoute
   '/need': typeof NeedRoute
   '/newsletter': typeof NewsletterRouteWithChildren
   '/partnership': typeof PartnershipRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/my-role': typeof MyRoleRoute
   '/need': typeof NeedRoute
   '/newsletter': typeof NewsletterRouteWithChildren
   '/partnership': typeof PartnershipRoute
@@ -83,6 +91,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/contact': typeof ContactRoute
+  '/my-role': typeof MyRoleRoute
   '/need': typeof NeedRoute
   '/newsletter': typeof NewsletterRouteWithChildren
   '/partnership': typeof PartnershipRoute
@@ -95,6 +104,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/contact'
+    | '/my-role'
     | '/need'
     | '/newsletter'
     | '/partnership'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/contact'
+    | '/my-role'
     | '/need'
     | '/newsletter'
     | '/partnership'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/contact'
+    | '/my-role'
     | '/need'
     | '/newsletter'
     | '/partnership'
@@ -126,6 +138,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ContactRoute: typeof ContactRoute
+  MyRoleRoute: typeof MyRoleRoute
   NeedRoute: typeof NeedRoute
   NewsletterRoute: typeof NewsletterRouteWithChildren
   PartnershipRoute: typeof PartnershipRoute
@@ -170,6 +183,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof NeedRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/my-role': {
+      id: '/my-role'
+      path: '/my-role'
+      fullPath: '/my-role'
+      preLoaderRoute: typeof MyRoleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -209,6 +229,7 @@ const NewsletterRouteWithChildren = NewsletterRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ContactRoute: ContactRoute,
+  MyRoleRoute: MyRoleRoute,
   NeedRoute: NeedRoute,
   NewsletterRoute: NewsletterRouteWithChildren,
   PartnershipRoute: PartnershipRoute,
