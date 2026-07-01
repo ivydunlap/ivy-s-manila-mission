@@ -152,10 +152,10 @@ function HomePage() {
             </p>
 
             <Link
-              to="/story"
+              to="/my-role"
               className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
             >
-              Read my story →
+              My role at KIM →
             </Link>
           </div>
         </div>
