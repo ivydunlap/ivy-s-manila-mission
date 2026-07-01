@@ -92,7 +92,7 @@ function PartnershipPage() {
               My goal is to raise <strong>$15,000+</strong> to fully fund my
               first year — through monthly gifts or one-time gifts. Both make
               a meaningful impact, and every gift is tax-deductible through
-              Kids International Ministries.
+              Restoration Church.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <a
