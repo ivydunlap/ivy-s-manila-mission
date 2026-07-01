@@ -113,7 +113,7 @@ function PartnershipPage() {
       <section className="px-6 py-16 md:py-20">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-display text-2xl italic leading-snug text-ink/80 md:text-3xl">
-            I'm committed to my first year in Manila from September 2026 to September 2027, and I'm following God for as long as He calls me there. My hope is that this first year is just the beginning.
+            I'm committed to my first year in Manila from September 2026 to September 2027, but I'm following God for as long as He calls me there. My hope is that this first year is just the beginning.
           </p>
         </div>
       </section>
