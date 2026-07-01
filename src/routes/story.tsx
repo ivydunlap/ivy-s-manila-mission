@@ -208,12 +208,10 @@ function StoryPage() {
           <div className="ml-auto max-w-lg bg-base/95 p-10 backdrop-blur-sm md:p-12">
             <Eyebrow>The Next Chapter</Eyebrow>
             <h3 className="font-display mb-6 text-3xl font-medium leading-tight md:text-4xl">
-              Will you <span className="italic">hold the rope</span> with me?
+              Will you join me?
             </h3>
             <p className="mb-8 leading-relaxed text-ink/75">
-              I cannot go alone. Some are called to go; others are called to
-              hold the rope — to pray, to give, to stand faithfully with the
-              ones who go.
+              &nbsp;Some go, and some send — through prayer, giving, and encouragement.&nbsp;I need people who will pray, give, and support me in this calling.&nbsp;
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
