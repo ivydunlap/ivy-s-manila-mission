@@ -131,36 +131,6 @@ export const posts: NewsletterPost[] = [
       },
     ],
   },
-  {
-    slug: "why-kids-international",
-    title: "delete \n",
-    date: "November 2025",
-    isoDate: "2025-11-01",
-    year: 2025,
-    excerpt:
-      "I get asked all the time: why this organization? Here's the story of how God lined up the partnership.",
-    cover: assetUrl(heroAsset.url),
-    blocks: [
-      {
-        type: "p",
-        text: "When I first started exploring full-time missions, I had a long list of questions and no shortlist of organizations. What I had was a stubborn sense that I was supposed to work with kids, and that the place was going to be Manila.",
-      },
-      { type: "h", text: "A long conversation" },
-      {
-        type: "p",
-        text: "A mentor introduced me to someone who introduced me to someone at Kids International Ministries (KIM). What I found was a 30+ year history of caring for children in Manila with real depth — orphan care, education, family restoration, and a strong local team.",
-      },
-      { type: "h", text: "How you can pray" },
-      {
-        type: "prayer",
-        items: [
-          "The KIM staff and kids in Manila as we prepare for me to join.",
-          "Wisdom in defining my role for the first year.",
-          "Continued clarity that this is where I'm meant to be.",
-        ],
-      },
-    ],
-  },
 ];
 
 export function getPostBySlug(slug: string): NewsletterPost | undefined {
