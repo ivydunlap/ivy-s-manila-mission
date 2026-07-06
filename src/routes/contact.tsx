@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
 import { Mail, Instagram, Facebook, HandHeart } from "lucide-react";
-import ivyPortrait from "@/assets/ivy-portrait.jpg";
+import ivyPortrait from "@/assets/ivy-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
