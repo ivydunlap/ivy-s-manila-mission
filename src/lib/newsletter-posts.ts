@@ -23,7 +23,7 @@ export type NewsletterPost = {
 export const posts: NewsletterPost[] = [
   {
     slug: "first-month-in-manila",
-    title: "First month in Manila",
+    title: "the first trip ",
     date: "May 2026",
     isoDate: "2026-05-01",
     year: 2026,
@@ -73,7 +73,7 @@ export const posts: NewsletterPost[] = [
   },
   {
     slug: "packing-up-a-life",
-    title: "Packing up a life",
+    title: "the second trip",
     date: "March 2026",
     isoDate: "2026-03-01",
     year: 2026,
@@ -103,7 +103,7 @@ export const posts: NewsletterPost[] = [
   },
   {
     slug: "funded-almost",
-    title: "Funded! (Almost.)",
+    title: "the third trip ",
     date: "January 2026",
     isoDate: "2026-01-01",
     year: 2026,
@@ -133,7 +133,7 @@ export const posts: NewsletterPost[] = [
   },
   {
     slug: "why-kids-international",
-    title: "Why Kids International Ministries",
+    title: "delete \n",
     date: "November 2025",
     isoDate: "2025-11-01",
     year: 2025,
