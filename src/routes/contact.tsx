@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
 import { Mail, Instagram, Facebook, HandHeart } from "lucide-react";
-import ivyPortrait from "@/assets/ivy-portrait.jpg";
+import ivyPortrait from "@/assets/ivy-portrait.jpg.asset.json";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -38,7 +38,7 @@ function ContactPage() {
             <div className="relative">
               <div className="absolute -inset-3 -z-10 bg-clay/15 md:-inset-4" />
               <img
-                src={ivyPortrait}
+                src={ivyPortrait.url}
                 alt="Ivy Dunlap"
                 loading="lazy"
                 width={1024}
