@@ -38,7 +38,7 @@ function ContactPage() {
             <div className="relative">
               <div className="absolute -inset-3 -z-10 bg-clay/15 md:-inset-4" />
               <img
-                src={ivyPortrait}
+                src={ivyPortrait.url}
                 alt="Ivy Dunlap"
                 loading="lazy"
                 width={1024}
