@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
+import { SubscribeForm } from "@/components/subscribe-form";
 import { posts, getPostsByYear } from "@/lib/newsletter-posts";
 
 export const Route = createFileRoute("/newsletter")({
@@ -101,23 +102,7 @@ function NewsletterPage() {
                 Stories, prayer requests, and what God is doing in Manila. No
                 spam, ever.
               </p>
-              <form
-                className="mt-5 flex flex-col gap-3"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <input
-                  type="email"
-                  required
-                  placeholder="you@email.com"
-                  className="w-full rounded-full border border-ink/15 bg-base px-4 py-3 text-sm placeholder:text-ink/40 focus:border-clay focus:outline-none"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-clay px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
-                >
-                  Subscribe
-                </button>
-              </form>
+              <SubscribeForm variant="stacked" />
             </div>
 
             <div>
