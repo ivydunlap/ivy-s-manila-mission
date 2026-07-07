@@ -4,7 +4,7 @@ import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
 import { posts } from "@/lib/newsletter-posts";
 import { renderPostEmail } from "@/lib/newsletter-email";
 
-export const Route = createFileRoute("/newsletter/email")({
+export const Route = createFileRoute("/newsletter_/email")({
   head: () => ({
     meta: [
       { title: "Send a newsletter — Ivy Dunlap" },

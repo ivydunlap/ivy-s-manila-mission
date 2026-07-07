@@ -3,7 +3,7 @@ import { SiteShell, Eyebrow } from "@/components/site-shell";
 import { SubscribeForm } from "@/components/subscribe-form";
 import { getPostBySlug, posts, type PostBlock } from "@/lib/newsletter-posts";
 
-export const Route = createFileRoute("/newsletter/$slug")({
+export const Route = createFileRoute("/newsletter_/$slug")({
   head: ({ params }) => {
     const post = getPostBySlug(params.slug);
     if (!post) return { meta: [{ title: "Newsletter — Ivy Dunlap" }] };
@@ -26,12 +26,8 @@ export const Route = createFileRoute("/newsletter/$slug")({
     <SiteShell>
       <div className="mx-auto max-w-2xl px-6 py-32 text-center">
         <Eyebrow>Not found</Eyebrow>
-        <h1 className="font-display text-4xl font-medium">
-          That letter isn't here.
-        </h1>
-        <p className="mt-4 text-ink/65">
-          It may have been moved or never existed.
-        </p>
+        <h1 className="font-display text-4xl font-medium">That letter isn't here.</h1>
+        <p className="mt-4 text-ink/65">It may have been moved or never existed.</p>
         <Link
           to="/newsletter"
           className="font-display mt-8 inline-flex items-center gap-2 border-b-2 border-clay/30 pb-1 text-sm font-semibold italic hover:border-clay"
@@ -82,9 +78,7 @@ function PostPage() {
             >
               ← Back to Newsletters
             </Link>
-            <div className="mt-6 text-sm font-medium italic text-ink/60">
-              {post.date}
-            </div>
+            <div className="mt-6 text-sm font-medium italic text-ink/60">{post.date}</div>
             <h1 className="font-display mt-3 text-balance text-4xl font-medium leading-[1.05] md:text-6xl">
               {post.title}
             </h1>
@@ -94,11 +88,7 @@ function PostPage() {
         {/* Cover */}
         <div className="px-6 pt-10">
           <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-paper">
-            <img
-              src={post.cover}
-              alt={post.title}
-              className="aspect-[16/9] w-full object-cover"
-            />
+            <img src={post.cover} alt={post.title} className="aspect-[16/9] w-full object-cover" />
           </div>
         </div>
 
@@ -120,11 +110,7 @@ function PostPage() {
                 return (
                   <figure key={i} className="!my-12">
                     <div className="overflow-hidden rounded-2xl bg-paper">
-                      <img
-                        src={b.src}
-                        alt={b.alt}
-                        className="aspect-[16/10] w-full object-cover"
-                      />
+                      <img src={b.src} alt={b.alt} className="aspect-[16/10] w-full object-cover" />
                     </div>
                     {b.caption && (
                       <figcaption className="mt-3 text-center text-sm italic text-ink/55">
@@ -144,10 +130,7 @@ function PostPage() {
                 );
               if (b.type === "prayer")
                 return (
-                  <div
-                    key={i}
-                    className="!my-10 rounded-2xl border border-ink/10 bg-paper/70 p-7"
-                  >
+                  <div key={i} className="!my-10 rounded-2xl border border-ink/10 bg-paper/70 p-7">
                     <div className="text-[10px] font-bold uppercase tracking-[0.28em] text-clay">
                       Prayer requests
                     </div>
@@ -215,8 +198,8 @@ function PostPage() {
                 Get the next letter <span className="italic text-clay/90">in your inbox.</span>
               </h2>
               <p className="mt-4 text-ink/65">
-                One thoughtful email a month — stories, prayer requests, and
-                what God is doing in Manila.
+                One thoughtful email a month — stories, prayer requests, and what God is doing in
+                Manila.
               </p>
               <SubscribeForm variant="inline" />
             </div>
