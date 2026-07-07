@@ -17,6 +17,7 @@ import { Route as NeedRouteImport } from './routes/need'
 import { Route as MyRoleRouteImport } from './routes/my-role'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as NewsletterEmailRouteImport } from './routes/newsletter.email'
 import { Route as NewsletterSlugRouteImport } from './routes/newsletter.$slug'
 
 const StoryRoute = StoryRouteImport.update({
@@ -59,6 +60,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const NewsletterEmailRoute = NewsletterEmailRouteImport.update({
+  id: '/email',
+  path: '/email',
+  getParentRoute: () => NewsletterRoute,
+} as any)
 const NewsletterSlugRoute = NewsletterSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -75,6 +81,7 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
+  '/newsletter/email': typeof NewsletterEmailRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
+  '/newsletter/email': typeof NewsletterEmailRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -98,6 +106,7 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/story': typeof StoryRoute
   '/newsletter/$slug': typeof NewsletterSlugRoute
+  '/newsletter/email': typeof NewsletterEmailRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -111,6 +120,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/story'
     | '/newsletter/$slug'
+    | '/newsletter/email'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -122,6 +132,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/story'
     | '/newsletter/$slug'
+    | '/newsletter/email'
   id:
     | '__root__'
     | '/'
@@ -133,6 +144,7 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/story'
     | '/newsletter/$slug'
+    | '/newsletter/email'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -204,6 +216,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/newsletter/email': {
+      id: '/newsletter/email'
+      path: '/email'
+      fullPath: '/newsletter/email'
+      preLoaderRoute: typeof NewsletterEmailRouteImport
+      parentRoute: typeof NewsletterRoute
+    }
     '/newsletter/$slug': {
       id: '/newsletter/$slug'
       path: '/$slug'
@@ -216,10 +235,12 @@ declare module '@tanstack/react-router' {
 
 interface NewsletterRouteChildren {
   NewsletterSlugRoute: typeof NewsletterSlugRoute
+  NewsletterEmailRoute: typeof NewsletterEmailRoute
 }
 
 const NewsletterRouteChildren: NewsletterRouteChildren = {
   NewsletterSlugRoute: NewsletterSlugRoute,
+  NewsletterEmailRoute: NewsletterEmailRoute,
 }
 
 const NewsletterRouteWithChildren = NewsletterRoute._addFileChildren(
@@ -239,3 +260,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
