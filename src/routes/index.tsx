@@ -151,12 +151,22 @@ function HomePage() {
               heart.
             </p>
 
-            <Link
-              to="/my-role"
-              className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
-            >
-              My role at KIM →
-            </Link>
+            <div className="flex flex-wrap items-center gap-x-8 gap-y-4">
+              <Link
+                to="/my-role"
+                className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
+              >
+                My role at KIM →
+              </Link>
+              <a
+                href="https://www.kidsim.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-display inline-flex items-center gap-2 border-b-2 border-white/40 pb-1 text-sm font-semibold italic text-white transition-colors hover:border-white"
+              >
+                Check out Kids International Ministries →
+              </a>
+            </div>
           </div>
         </div>
       </section>
