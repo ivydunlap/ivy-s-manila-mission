@@ -22,7 +22,7 @@ export const Route = createFileRoute("/partnership")({
 });
 
 const budget = [
-  "Housing & food ($500/month)",
+  "Housing & food",
   "Transportation",
   "Ministry tools",
   "Tagalog lessons",
@@ -131,9 +131,7 @@ function PartnershipPage() {
                 </span>
               </h2>
               <p className="mt-8 leading-relaxed text-ink/70">
-                Here's exactly what your support covers. Nothing hidden —
-                this is the real cost of living and ministering in Manila for
-                twelve months.
+                Here's exactly what your support covers:
               </p>
             </div>
             <ul className="divide-y divide-ink/10 border-y border-ink/10">
