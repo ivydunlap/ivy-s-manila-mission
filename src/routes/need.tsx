@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
-import philippinesMap from "@/assets/philippines-map.svg.asset.json";
+import { assetUrl } from "@/lib/utils";
+
+const needFeeding = assetUrl("/images/need-feeding.jpeg");
 
 export const Route = createFileRoute("/need")({
   head: () => ({
@@ -38,28 +40,41 @@ function NeedPage() {
         intro="A quick look at the spiritual and physical landscape — and the children at the center of it."
       />
 
-      {/* Map + stats — editorial */}
-      <section className="px-6 py-20 md:py-28">
-        <div className="mx-auto grid max-w-6xl items-center gap-16 md:grid-cols-2">
-          <div className="relative mx-auto w-full max-w-md">
-            <PhilippinesMap />
-          </div>
-          <div>
-            <Eyebrow>By the Numbers</Eyebrow>
-            <h2 className="font-display mb-10 text-3xl font-medium leading-tight md:text-4xl">
+      {/* On the ground — full-bleed photo with stats overlay */}
+      <section className="relative isolate overflow-hidden">
+        <img
+          src={needFeeding}
+          alt="Ivy serving a meal to a line of children in Manila"
+          loading="lazy"
+          className="absolute inset-0 h-full w-full object-cover object-top"
+        />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, oklch(0.22 0.04 245 / 0.28) 0%, oklch(0.22 0.04 245 / 0.15) 30%, oklch(0.22 0.04 245 / 0.55) 70%, oklch(0.22 0.04 245 / 0.88) 100%)",
+          }}
+        />
+        <div className="relative mx-auto flex min-h-[60vh] max-w-6xl items-end px-6 py-16 md:min-h-[72vh] md:py-24">
+          <div
+            className="max-w-lg"
+            style={{ textShadow: "0 2px 16px oklch(0.15 0.03 245 / 0.7)" }}
+          >
+            <Eyebrow tone="white">By the Numbers</Eyebrow>
+            <h2 className="font-display mb-6 text-3xl font-medium leading-tight text-white md:text-4xl">
               The size and shape of{" "}
-              <span className="italic text-clay/90">the need.</span>
+              <span className="italic text-clay">the need.</span>
             </h2>
-            <ul className="divide-y divide-ink/10 border-y border-ink/10">
+            <ul className="divide-y divide-white/20 border-y border-white/20">
               {stats.map((s) => (
                 <li
                   key={s.label}
-                  className="flex items-baseline justify-between gap-6 py-5"
+                  className="flex items-baseline justify-between gap-6 py-4"
                 >
-                  <span className="font-display text-3xl font-medium text-clay md:text-4xl">
+                  <span className="font-display text-2xl font-medium text-clay md:text-3xl">
                     {s.value}
                   </span>
-                  <span className="text-right text-sm leading-snug text-ink/65">
+                  <span className="text-right text-sm leading-snug text-white/80">
                     {s.label}
                   </span>
                 </li>
@@ -119,40 +134,5 @@ function NeedPage() {
         </div>
       </section>
     </SiteShell>
-  );
-}
-
-function PhilippinesMap() {
-  // Manila ≈ 14.6°N, 120.98°E → ~42% from left, ~39.5% from top of the SVG bounds.
-  const manila = { left: "42%", top: "39.5%" };
-  return (
-    <div className="relative mx-auto w-full max-w-sm">
-      <img
-        src={philippinesMap.url}
-        alt="Map of the Philippines with Manila highlighted"
-        className="block h-auto w-full opacity-80 [filter:saturate(0)_brightness(0.55)]"
-      />
-      {/* Manila marker */}
-      <div
-        className="pointer-events-none absolute -translate-x-1/2 -translate-y-1/2"
-        style={{ left: manila.left, top: manila.top }}
-      >
-        <span className="block h-4 w-4 rounded-full bg-clay/15" />
-        <span className="absolute left-1/2 top-1/2 block h-2.5 w-2.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay/40" />
-        <span className="absolute left-1/2 top-1/2 block h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay" />
-      </div>
-      <div
-        className="pointer-events-none absolute translate-x-2"
-        style={{ left: manila.left, top: manila.top }}
-      >
-        <div className="ml-4 -translate-y-1/2">
-          <div className="h-px w-10 bg-clay/50" />
-          <div className="font-display mt-1 text-sm italic text-ink">Manila</div>
-          <div className="font-body text-[10px] tracking-[0.2em] text-ink/50">
-            14.6°N 120.98°E
-          </div>
-        </div>
-      </div>
-    </div>
   );
 }
