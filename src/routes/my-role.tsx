@@ -77,8 +77,9 @@ function MyRolePage() {
             My Commitment
           </p>
           <p className="mt-3 font-display text-2xl italic leading-snug text-ink/80 md:text-3xl">
-            I'm committed to serving in Manila from September 2026 through at
-            least one year, with hope that God will call me to stay longer.
+            I'm committed to my first year in Manila from September 2026 to
+            September 2027, but I'm following God for as long as He calls me
+            there.
           </p>
         </div>
       </section>
