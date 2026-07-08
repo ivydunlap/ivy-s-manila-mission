@@ -94,17 +94,17 @@ function PartnershipPage() {
               a meaningful impact, and every gift is tax-deductible through
               Restoration Church.
             </p>
-            <div className="flex flex-wrap items-center gap-6">
+            <div className="flex flex-wrap items-center gap-8">
               <a
                 href="https://restorationyakima.churchcenter.com/giving/to/ivy-dunlap-missions-support"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-clay px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-clay/90"
+                className="inline-flex items-center gap-2 rounded-full bg-clay px-9 py-5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-clay/90"
               >
                 Give Online →
               </a>
-              <div className="flex items-center gap-3">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40">
+              <div className="flex items-center gap-4">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-ink/40">
                   Or
                   <br />
                   Scan
@@ -112,9 +112,9 @@ function PartnershipPage() {
                 <img
                   src="/images/giving-qr.png"
                   alt="QR code linking to Ivy's giving page"
-                  width={96}
-                  height={96}
-                  className="size-24 rounded-md bg-base p-1.5 ring-1 ring-ink/15"
+                  width={144}
+                  height={144}
+                  className="size-36 rounded-md bg-base p-2 ring-1 ring-ink/15"
                 />
               </div>
             </div>
