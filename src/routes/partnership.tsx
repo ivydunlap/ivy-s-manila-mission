@@ -109,15 +109,6 @@ function PartnershipPage() {
         </div>
       </section>
 
-      {/* Commitment */}
-      <section className="px-6 py-16 md:py-20">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="font-display text-2xl italic leading-snug text-ink/80 md:text-3xl">
-            I'm committed to my first year in Manila from September 2026 to September 2027, but I'm following God for as long as He calls me there. My hope is that this first year is just the beginning.
-          </p>
-        </div>
-      </section>
-
       {/* Budget — editorial ledger */}
       <section className="border-y border-ink/10 bg-paper/60 px-6 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">

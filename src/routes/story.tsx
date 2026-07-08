@@ -126,7 +126,29 @@ function StoryPage() {
           </p>
         </Chapter>
 
-        <Chapter eyebrow="Chapter Four" title="Why Manila">
+        <Chapter eyebrow="Chapter Four" title="My Commitment">
+          <p className="font-display text-2xl italic text-ink">
+            I'm committed to my first year in Manila from September 2026 to
+            September 2027, but I'm following God for as long as He calls me
+            there. My hope is that this first year is just the beginning.
+          </p>
+          <p>
+            While I'm there, I'll be helping build and support the
+            KidsConnect communication app, hosting visiting teams, learning
+            Tagalog so I can share the gospel in a way that honors people's
+            culture, and serving in youth and kids ministry.
+          </p>
+          <p>
+            <Link
+              to="/my-role"
+              className="font-display inline-flex items-center gap-2 border-b-2 border-clay/40 pb-1 text-lg font-semibold not-italic text-ink transition-colors hover:border-clay hover:text-clay"
+            >
+              See my full role in Manila →
+            </Link>
+          </p>
+        </Chapter>
+
+        <Chapter eyebrow="Chapter Five" title="Why Manila">
           <p>
             I've asked myself that question a lot. Why me? Why there? I was
             born into a family that loves me, in a country full of
