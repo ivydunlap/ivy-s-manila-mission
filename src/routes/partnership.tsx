@@ -39,7 +39,7 @@ function PartnershipPage() {
       <PageHeader
         eyebrow="Partnership"
         title="Will you hold the rope?"
-        intro="Before William Carey left for India in 1793, he told his friend Andrew Fuller: 'I will go down into the pit if you will hold the rope.' Some are called to go. Others are called to hold the rope. Different roles, same surrender, same mission."
+        intro="Before William Carey left for India in 1793, he told his friend Andrew Fuller: 'I will go down into the pit if you will hold the rope.' Fuller replied, 'I will most certainly hold the rope.' Some are called to go. Others are called to hold the rope. Different roles, same surrender, same mission."
       />
 
       {/* Two partnership columns — editorial split */}
@@ -96,14 +96,27 @@ function PartnershipPage() {
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <a
-                href="https://kidsim.org/give"
+                href="https://restorationyakima.churchcenter.com/giving/to/ivy-dunlap-missions-support"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex rounded-full bg-clay px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-clay/90"
+                className="inline-flex items-center gap-2 rounded-full bg-clay px-7 py-3.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-clay/90"
               >
-                Give Online
+                Give Online →
               </a>
-              <QRPlaceholder />
+              <div className="flex items-center gap-3">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-ink/40">
+                  Or
+                  <br />
+                  Scan
+                </span>
+                <img
+                  src="/images/giving-qr.png"
+                  alt="QR code linking to Ivy's giving page"
+                  width={96}
+                  height={96}
+                  className="size-24 rounded-md bg-base p-1.5 ring-1 ring-ink/15"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -162,21 +175,5 @@ function PartnershipPage() {
         </div>
       </section>
     </SiteShell>
-  );
-}
-
-function QRPlaceholder() {
-  return (
-    <div
-      aria-label="Giving QR code placeholder"
-      className="grid size-24 grid-cols-8 grid-rows-8 gap-[2px] bg-base p-2 ring-1 ring-ink/15"
-    >
-      {Array.from({ length: 64 }).map((_, i) => {
-        const on = ((i * 9301 + 49297) % 233280) % 3 !== 0;
-        return (
-          <div key={i} className={on ? "bg-ink rounded-[1px]" : "bg-transparent"} />
-        );
-      })}
-    </div>
   );
 }

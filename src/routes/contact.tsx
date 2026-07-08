@@ -70,8 +70,8 @@ function ContactPage() {
                 <ContactLine
                   icon={<HandHeart className="size-4" strokeWidth={1.75} />}
                   label="Give"
-                  href="https://kidsim.org/give"
-                  value="kidsim.org/give"
+                  href="https://restorationyakima.churchcenter.com/giving/to/ivy-dunlap-missions-support"
+                  value="Give Online"
                 />
               </ul>
             </div>
