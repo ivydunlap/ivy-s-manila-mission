@@ -70,6 +70,19 @@ function MyRolePage() {
         intro="My role at Kids International Ministries is a mix of hands-on ministry, behind-the-scenes support, and helping teams experience the same life-changing things that first impacted me. I’m stepping into several areas where I can serve, grow, and make a real difference."
       />
 
+      {/* Commitment length */}
+      <section className="px-6 pb-4 pt-2 md:pb-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.28em] text-clay">
+            My Commitment
+          </p>
+          <p className="mt-3 font-display text-2xl italic leading-snug text-ink/80 md:text-3xl">
+            I'm committed to serving in Manila from September 2026 through at
+            least one year, with hope that God will call me to stay longer.
+          </p>
+        </div>
+      </section>
+
       {/* Role cards — editorial grid */}
       <section className="px-6 py-20 md:py-28">
         <div className="mx-auto max-w-6xl">
