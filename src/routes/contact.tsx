@@ -31,7 +31,7 @@ function ContactPage() {
       <PageHeader
         eyebrow="Say Hello"
         title="Let's stay in touch."
-        intro="Questions, encouragement, an invitation to share at your church — I'd love to hear from you."
+        intro="Questions, encouragement, or curious about serving in Manila yourself — I'd love to hear from you!"
       />
 
       <section className="px-6 py-20 md:py-28">
