@@ -67,7 +67,7 @@ function ContactPage() {
                 <ContactLine
                   icon={<Facebook className="size-4" strokeWidth={1.75} />}
                   label="Facebook"
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/ivy.dunlap.893400/"
                   value="Ivy Dunlap"
                 />
                 <ContactLine
