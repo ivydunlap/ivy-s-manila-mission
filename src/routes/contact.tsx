@@ -94,21 +94,21 @@ function ContactPage() {
                 <input
                   type="text"
                   required
-                  className="w-full border-b border-ink/20 bg-transparent py-3 text-base focus:border-clay focus:outline-none"
+                  className="w-full border-b border-ink/20 bg-transparent py-3 text-base text-ink focus:border-clay focus:outline-none"
                 />
               </Field>
               <Field label="Email">
                 <input
                   type="email"
                   required
-                  className="w-full border-b border-ink/20 bg-transparent py-3 text-base focus:border-clay focus:outline-none"
+                  className="w-full border-b border-ink/20 bg-transparent py-3 text-base text-ink focus:border-clay focus:outline-none"
                 />
               </Field>
               <Field label="Message">
                 <textarea
                   rows={5}
                   required
-                  className="w-full resize-none border-b border-ink/20 bg-transparent py-3 text-base focus:border-clay focus:outline-none"
+                  className="w-full resize-none border-b border-ink/20 bg-transparent py-3 text-base text-ink focus:border-clay focus:outline-none"
                 />
               </Field>
               <button
