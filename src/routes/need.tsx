@@ -46,7 +46,7 @@ function NeedPage() {
           src={needFeeding}
           alt="Ivy serving a meal to a line of children in Manila"
           loading="lazy"
-          className="absolute inset-0 h-full w-full object-cover object-top"
+          className="absolute inset-0 h-full w-full object-cover object-[50%_55%]"
         />
         <div
           className="absolute inset-0"
