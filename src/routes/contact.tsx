@@ -97,7 +97,7 @@ function ContactPage() {
                   className="w-full border-b border-ink/20 bg-transparent py-3 text-base text-ink focus:border-clay focus:outline-none"
                 />
               </Field>
-              <Field label="Email">
+              <Field label="Your email">
                 <input
                   type="email"
                   required
