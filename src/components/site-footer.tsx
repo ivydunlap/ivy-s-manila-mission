@@ -30,16 +30,6 @@ export function SiteFooter() {
                     Email Me
                   </Link>
                 </li>
-                <li>
-                  <a
-                    href="https://instagram.com"
-                    className="hover:text-sage"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Instagram
-                  </a>
-                </li>
               </ul>
             </div>
             <div>

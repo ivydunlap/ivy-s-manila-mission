@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
-import { Mail, Instagram, Facebook, HandHeart } from "lucide-react";
+import { Mail, Facebook, HandHeart } from "lucide-react";
 import ivyPortraitAsset from "@/assets/ivy-portrait.jpg.asset.json";
 import { assetUrl } from "@/lib/utils";
 
@@ -57,12 +57,6 @@ function ContactPage() {
                   label="Email"
                   href="mailto:hello@ivydunlap.com"
                   value="hello@ivydunlap.com"
-                />
-                <ContactLine
-                  icon={<Instagram className="size-4" strokeWidth={1.75} />}
-                  label="Instagram"
-                  href="https://instagram.com"
-                  value="@ivy.dunlap"
                 />
                 <ContactLine
                   icon={<Facebook className="size-4" strokeWidth={1.75} />}
