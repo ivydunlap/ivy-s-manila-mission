@@ -148,7 +148,7 @@ function StoryPage() {
           </p>
         </Chapter>
 
-        <Chapter eyebrow="Chapter Five" title="Why Manila">
+        <Chapter eyebrow="Chapter Five" title="Why Me?">
           <p>
             I've asked myself that question a lot. Why me? Why there? I was
             born into a family that loves me, in a country full of
