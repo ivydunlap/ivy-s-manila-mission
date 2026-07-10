@@ -90,7 +90,7 @@ function PartnershipPage() {
             </h2>
             <p className="mb-8 leading-relaxed text-ink/75">
               My goal is to raise <strong>$15,000+</strong> to fully fund my
-              first year — through monthly gifts or one-time gifts. Both make
+              first year — through monthly or one-time gifts. Both make
               a meaningful impact, and every gift is tax-deductible through
               Restoration Church.
             </p>
