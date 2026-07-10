@@ -110,8 +110,7 @@ function NewsletterPage() {
                 One email <span className="italic text-clay/90">a month.</span>
               </h3>
               <p className="mt-3 text-sm leading-relaxed text-ink/65">
-                Stories, prayer requests, and what God is doing in Manila. No
-                spam, ever.
+                Stories, prayer requests, and what God is doing in Manila.
               </p>
               <SubscribeForm variant="stacked" />
             </div>
