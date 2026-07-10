@@ -29,7 +29,7 @@ export type SubscribeResult =
   | { status: "error"; message: string };
 
 const SUCCESS_MESSAGE =
-  "Almost there! Check your inbox for a confirmation email to finish subscribing.";
+  "Almost there! Check your inbox for a confirmation email to finish subscribing — it may take a minute, and check your junk folder too.";
 
 /**
  * Subscribes an email to the Mailchimp audience via a cross-origin form POST
