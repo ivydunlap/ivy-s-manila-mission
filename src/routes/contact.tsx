@@ -100,7 +100,7 @@ function ContactLine({
         <span className="block text-[10px] font-bold uppercase tracking-[0.25em] text-ink/45">
           {label}
         </span>
-        <span className="block truncate text-base font-medium">{value}</span>
+        <span className="block truncate text-base font-medium text-ink">{value}</span>
       </span>
     </>
   );
@@ -117,7 +117,7 @@ function ContactLine({
     <li>
       <a
         href={href}
-        className="group flex items-center gap-5 py-5 transition-colors hover:text-clay"
+        className="group flex items-center gap-5 py-5 text-ink transition-colors hover:text-clay"
         target={href.startsWith("http") ? "_blank" : undefined}
         rel="noreferrer"
       >
