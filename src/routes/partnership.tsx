@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell, PageHeader, Eyebrow } from "@/components/site-shell";
 import { Heart, HandHeart } from "lucide-react";
 
@@ -67,12 +67,12 @@ function PartnershipPage() {
             <p className="mb-8 leading-relaxed text-ink/75">
               I'd love to share specific requests and updates with you.
             </p>
-            <a
-              href="mailto:hello@ivydunlap.com?subject=Prayer%20Team"
+            <Link
+              to="/newsletter"
               className="font-display inline-flex items-center gap-2 border-b-2 border-sage/40 pb-1 text-sm font-semibold italic transition-colors hover:border-sage"
             >
               Join Prayer Team →
-            </a>
+            </Link>
           </div>
 
           {/* Financial */}

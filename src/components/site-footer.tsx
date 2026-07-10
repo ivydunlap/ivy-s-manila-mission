@@ -43,7 +43,7 @@ export function SiteFooter() {
                   </Link>
                 </li>
                 <li>
-                  <Link to="/partnership" className="hover:text-sage">
+                  <Link to="/newsletter" className="hover:text-sage">
                     Prayer Team
                   </Link>
                 </li>
