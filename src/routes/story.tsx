@@ -181,8 +181,7 @@ function StoryPage() {
         <Chapter eyebrow="One More Thing" title="A vision, thirty years on">
           <p>
             My dad had a vision about thirty years ago — before I was born —
-            for something he called Missions in Action. He'd seen how much
-            time missionaries spent just trying to stay connected with their
+            for something he called Missions in Action. After his first year of college while on a short-term mission trip to Ghana, Africa, he saw how much time missionaries spent just trying to stay connected with their
             supporters. And right as the internet was beginning, he saw what
             could be possible: what if missionaries could stay on the field
             and stay deeply connected with the people back home who loved
