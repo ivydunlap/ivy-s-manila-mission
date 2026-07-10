@@ -36,7 +36,7 @@ function NeedPage() {
     <SiteShell>
       <PageHeader
         eyebrow="The Need"
-        title="Why Manila."
+        title="Why Manila?"
         intro="A quick look at the spiritual and physical landscape — and the children at the center of it."
       />
 

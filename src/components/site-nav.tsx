@@ -5,7 +5,7 @@ const links = [
   { to: "/", label: "Home" },
   { to: "/story", label: "My Story" },
   { to: "/my-role", label: "My Role" },
-  { to: "/need", label: "Why Manila" },
+  { to: "/need", label: "Why Manila?" },
   { to: "/partnership", label: "Partnership" },
   { to: "/newsletter", label: "Newsletter" },
   { to: "/contact", label: "Contact" },
