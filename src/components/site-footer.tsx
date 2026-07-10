@@ -56,12 +56,9 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-8 md:flex-row">
+        <div className="flex flex-col items-center gap-4 border-t border-border/60 pt-8">
           <div className="text-[10px] font-medium uppercase tracking-wide text-ink/40">
-            © {new Date().getFullYear()} Ivy Dunlap. Soli Deo Gloria.
-          </div>
-          <div className="text-[10px] font-medium uppercase tracking-wide text-ink/40">
-            Sent through Kids International Ministries
+            © {new Date().getFullYear()} Ivy Dunlap.
           </div>
         </div>
       </div>
