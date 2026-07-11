@@ -24,7 +24,6 @@ export const Route = createFileRoute("/partnership")({
 const budget = [
   "Housing & food",
   "Transportation",
-  "Ministry tools",
   "Tagalog lessons",
   "Staff retreats",
   "Flights to and from the Philippines",
@@ -139,13 +138,13 @@ function PartnershipPage() {
               </p>
             </div>
             <ul className="divide-y divide-ink/10 border-y border-ink/10">
-              {budget.map((item, i) => (
+              {budget.map((item) => (
                 <li
                   key={item}
                   className="flex items-baseline gap-6 py-4 text-ink/80"
                 >
-                  <span className="font-display w-8 shrink-0 text-sm italic text-clay/70">
-                    {String(i + 1).padStart(2, "0")}
+                  <span className="w-8 shrink-0 text-center text-clay/70">
+                    •
                   </span>
                   <span className="leading-snug">{item}</span>
                 </li>
