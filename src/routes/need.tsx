@@ -28,7 +28,6 @@ const stats = [
   { value: "14M+", label: "people in metro Manila" },
   { value: "1 in 4", label: "Filipino children live in poverty" },
   { value: "~1M", label: "street-connected children nationwide" },
-  { value: " ", label: " " },
 ];
 
 function NeedPage() {
