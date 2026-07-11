@@ -25,10 +25,10 @@ export const Route = createFileRoute("/need")({
 });
 
 const stats = [
-  { value: "18M+", label: "people in metro Manila" },
+  { value: "14M+", label: "people in metro Manila" },
   { value: "1 in 4", label: "Filipino children live in poverty" },
-  { value: "~1.8M", label: "street-connected children nationwide" },
-  { value: "<3%", label: "evangelical Christians in many provinces" },
+  { value: "~1M", label: "street-connected children nationwide" },
+  { value: " ", label: " " },
 ];
 
 function NeedPage() {
