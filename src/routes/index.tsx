@@ -143,7 +143,7 @@ function HomePage() {
               <span className="italic">Ministries</span>
             </h2>
             <p className="text-pretty mb-8 max-w-[52ch] leading-relaxed text-white/85">
-              KIM has been serving the Philippines for over thirty years —
+              KIM has been serving the Philippines for over twenty years —
               children's homes, schools, medical clinics, feeding programs,
               and family ministry. I'll be serving as an intern to Director
               Norman Denler, helping teams who come to serve and walking
