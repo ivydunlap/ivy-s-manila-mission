@@ -47,7 +47,7 @@ export function SiteNav() {
 
         <Link
           to="/partnership"
-          className="hidden rounded-full border border-ink/10 px-4 py-2 text-xs font-semibold uppercase tracking-widest transition-colors hover:bg-ink hover:text-base md:inline-block"
+          className="hidden rounded-full bg-clay px-4 py-2 text-xs font-semibold uppercase tracking-widest text-white transition-colors hover:bg-clay/90 md:inline-block"
         >
           Give
         </Link>
