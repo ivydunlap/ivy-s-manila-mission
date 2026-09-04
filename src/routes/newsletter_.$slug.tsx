@@ -86,9 +86,13 @@ function PostPage() {
         </header>
 
         {/* Cover */}
-        <div className="px-6 pt-10">
-          <div className="mx-auto max-w-4xl overflow-hidden rounded-2xl bg-paper">
-            <img src={post.cover} alt={post.title} className="aspect-[16/9] w-full object-cover" />
+        <div className="pt-10">
+          <div className="mx-auto max-w-5xl bg-paper">
+            <img
+              src={post.cover}
+              alt={post.title}
+              className="block aspect-[16/7] w-full object-cover object-center"
+            />
           </div>
         </div>
 
@@ -194,12 +198,14 @@ function PostPage() {
           <div className="mx-auto grid max-w-5xl gap-12 md:grid-cols-2 md:items-center">
             <div>
               <Eyebrow>Subscribe</Eyebrow>
+              <p className="font-display mt-5 text-lg italic text-ink/65">
+                Haven&apos;t signed up yet?
+              </p>
               <h2 className="font-display text-3xl font-medium leading-tight md:text-4xl">
                 Get the next letter <span className="italic text-clay/90">in your inbox.</span>
               </h2>
               <p className="mt-4 text-ink/65">
-                One thoughtful email a month — stories, prayer requests, and what God is doing in
-                Manila.
+                One email a month — stories, prayer requests, and what God is doing in Manila.
               </p>
               <SubscribeForm variant="inline" />
             </div>
@@ -209,7 +215,7 @@ function PostPage() {
                 Walk with me <span className="italic text-clay/90">financially.</span>
               </h3>
               <p className="mt-3 text-ink/65">
-                Every monthly partner makes this work possible. Join the team.
+                Every gift helps make this work possible. Join the team.
               </p>
               <Link
                 to="/partnership"
