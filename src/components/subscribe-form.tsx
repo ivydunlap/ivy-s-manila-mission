@@ -12,6 +12,8 @@ type Variant = "stacked" | "inline";
  * See src/lib/mailchimp.ts for the one-time setup (paste your form URL there).
  */
 export function SubscribeForm({ variant = "stacked" }: { variant?: Variant }) {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<SubscribeResult | null>(null);
@@ -21,10 +23,18 @@ export function SubscribeForm({ variant = "stacked" }: { variant?: Variant }) {
     if (loading) return;
     setLoading(true);
     setResult(null);
-    const r = await subscribeToMailchimp(email.trim());
+    const r = await subscribeToMailchimp({
+      email: email.trim(),
+      firstName: firstName.trim(),
+      lastName: lastName.trim(),
+    });
     setResult(r);
     setLoading(false);
-    if (r.status === "success" || r.status === "already") setEmail("");
+    if (r.status === "success" || r.status === "already") {
+      setFirstName("");
+      setLastName("");
+      setEmail("");
+    }
   }
 
   const isInline = variant === "inline";
@@ -48,6 +58,24 @@ export function SubscribeForm({ variant = "stacked" }: { variant?: Variant }) {
       onSubmit={handleSubmit}
       className={isInline ? "mt-6 flex flex-col gap-3 sm:flex-row" : "mt-5 flex flex-col gap-3"}
     >
+      <input
+        type="text"
+        value={firstName}
+        onChange={(e) => setFirstName(e.target.value)}
+        disabled={loading}
+        placeholder="First name"
+        aria-label="First name"
+        className="rounded-full border border-ink/15 bg-base px-5 py-3 text-sm placeholder:text-ink/40 focus:border-clay focus:outline-none disabled:opacity-60"
+      />
+      <input
+        type="text"
+        value={lastName}
+        onChange={(e) => setLastName(e.target.value)}
+        disabled={loading}
+        placeholder="Last name"
+        aria-label="Last name"
+        className="rounded-full border border-ink/15 bg-base px-5 py-3 text-sm placeholder:text-ink/40 focus:border-clay focus:outline-none disabled:opacity-60"
+      />
       <input
         type="email"
         required

@@ -28,6 +28,12 @@ export type SubscribeResult =
   | { status: "already"; message: string }
   | { status: "error"; message: string };
 
+export type SubscribeInput = {
+  email: string;
+  firstName: string;
+  lastName: string;
+};
+
 const SUCCESS_MESSAGE =
   "Almost there! Check your inbox for a confirmation email to finish subscribing — it may take a minute, and check your junk folder too.";
 
@@ -37,7 +43,11 @@ const SUCCESS_MESSAGE =
  * once the submission has been sent — Mailchimp's confirmation email is the
  * real receipt.
  */
-export function subscribeToMailchimp(email: string): Promise<SubscribeResult> {
+export function subscribeToMailchimp({
+  email,
+  firstName,
+  lastName,
+}: SubscribeInput): Promise<SubscribeResult> {
   return new Promise((resolve) => {
     if (!MAILCHIMP_FORM_ACTION) {
       resolve({
@@ -79,6 +89,8 @@ export function subscribeToMailchimp(email: string): Promise<SubscribeResult> {
     // audience's form uses. Sending both (identical) is safe and future-proof.
     addField("EMAIL", email);
     addField("MERGE0", email);
+    addField("FNAME", firstName);
+    addField("LNAME", lastName);
 
     document.body.appendChild(iframe);
     document.body.appendChild(form);
