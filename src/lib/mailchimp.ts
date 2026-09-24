@@ -34,8 +34,7 @@ export type SubscribeInput = {
   lastName: string;
 };
 
-const SUCCESS_MESSAGE =
-  "Almost there! Check your inbox for a confirmation email to finish subscribing — it may take a minute, and check your junk folder too.";
+const SUCCESS_MESSAGE = "Thanks for joining my newsletter.";
 
 /**
  * Subscribes an email to the Mailchimp audience via a cross-origin form POST
