@@ -33,7 +33,7 @@ export const posts: NewsletterPost[] = [
       },
       {
         type: "p",
-        text: "I made it to Manila! I've been here for about 10 days, and I'm excited to share what this new season has been like and what God is doing in my life.",
+        text: "I made it to Manila! I've been here for about two weeks, and I'm excited to share what this new season has been like and what God is doing in my life.",
       },
       {
         type: "p",
