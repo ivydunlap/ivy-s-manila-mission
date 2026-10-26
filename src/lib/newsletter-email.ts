@@ -2,15 +2,16 @@
 // Turns a NewsletterPost (the same content shown on the website) into an
 // email-ready HTML document you can paste into a Mailchimp "Code your own"
 // campaign and send. Email HTML has to be old-school: table layout, inline
-// styles, web-safe fonts, and ABSOLUTE image URLs — so this file deliberately
-// looks nothing like the React site.
+// styles, and web-safe fonts — so this file deliberately
+// looks nothing like the React site. Inline post photos are omitted; the cover
+// photo remains at the top of the email.
 //
 // Used by the /newsletter/email tool page (the "Copy for Mailchimp" button).
 
 import type { NewsletterPost, PostBlock } from "@/lib/newsletter-posts";
 
-// Live site origin — email images/links must be absolute (email clients can't
-// resolve "/assets/…"). Update this if the domain ever changes.
+// Live site origin — email images/links need absolute URLs. Update this if the
+// domain ever changes.
 export const SITE_ORIGIN = "https://ivydunlap.com";
 
 // Brand colors (converted from the site's oklch tokens in styles.css).
@@ -61,18 +62,8 @@ function renderBlock(block: PostBlock): string {
           block.text,
         )}</div>`,
       );
-    case "img": {
-      const caption = block.caption
-        ? `<div style="font-family:${SANS};font-size:13px;font-style:italic;color:${C.muted};padding:6px 0 0;">${esc(
-            block.caption,
-          )}</div>`
-        : "";
-      return row(
-        `<div style="padding:14px 32px;"><img src="${abs(block.src)}" alt="${esc(
-          block.alt,
-        )}" width="536" style="width:100%;max-width:536px;height:auto;display:block;border-radius:8px;" />${caption}</div>`,
-      );
-    }
+    case "img":
+      return "";
     case "quote":
       return row(
         `<div style="padding:16px 32px;"><div style="border-left:3px solid ${C.clay};padding:4px 0 4px 18px;font-family:${SERIF};font-size:19px;font-style:italic;line-height:1.5;color:${C.ink};">${esc(
