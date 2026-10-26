@@ -35,7 +35,7 @@ function EmailToolPage() {
       <PageHeader
         eyebrow="For Ivy"
         title="Send a newsletter"
-        intro="Write the post on the site, then copy its email version here and paste it into Mailchimp. It includes the header photo but leaves out photos within the letter. This page is just for you — it isn't linked anywhere or shown in search."
+        intro="Write the post on the site, then copy its email version here and paste it into Mailchimp. Photos are left out of the email version. This page is just for you — it isn't linked anywhere or shown in search."
       />
 
       <section className="px-6 pb-24">

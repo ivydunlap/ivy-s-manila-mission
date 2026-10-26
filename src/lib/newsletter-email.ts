@@ -3,15 +3,13 @@
 // email-ready HTML document you can paste into a Mailchimp "Code your own"
 // campaign and send. Email HTML has to be old-school: table layout, inline
 // styles, and web-safe fonts — so this file deliberately
-// looks nothing like the React site. Inline post photos are omitted; the cover
-// photo remains at the top of the email.
+// looks nothing like the React site. All photos are omitted from the email.
 //
 // Used by the /newsletter/email tool page (the "Copy for Mailchimp" button).
 
 import type { NewsletterPost, PostBlock } from "@/lib/newsletter-posts";
 
-// Live site origin — email images/links need absolute URLs. Update this if the
-// domain ever changes.
+// Live site origin. Update this if the domain ever changes.
 export const SITE_ORIGIN = "https://ivydunlap.com";
 
 // Brand colors (converted from the site's oklch tokens in styles.css).
@@ -35,13 +33,6 @@ function esc(s: string): string {
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
-}
-
-// Make a URL absolute against the live site (email clients need full URLs).
-function abs(url: string): string {
-  if (!url) return url;
-  if (/^https?:\/\//i.test(url)) return url;
-  return SITE_ORIGIN + (url.startsWith("/") ? url : "/" + url);
 }
 
 function row(inner: string): string {
@@ -112,9 +103,6 @@ export function renderPostEmail(post: NewsletterPost): string {
 <tr><td style="padding:8px 32px 4px;font-family:${SERIF};font-size:30px;line-height:1.2;color:${C.ink};">${esc(
     post.title,
   )}</td></tr>
-<tr><td style="padding:14px 0 6px;"><img src="${abs(post.cover)}" alt="${esc(
-    post.title,
-  )}" width="600" style="width:100%;max-width:600px;height:auto;display:block;" /></td></tr>
 ${blocks}
 <tr><td style="padding:28px 32px;border-top:1px solid ${C.hair};font-family:${SANS};font-size:13px;line-height:1.7;color:${C.muted};">
 <a href="${postUrl}" style="color:${C.clay};text-decoration:none;font-weight:bold;">Read this letter on the website &rarr;</a><br><br>
